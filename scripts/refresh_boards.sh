@@ -21,16 +21,17 @@ AGENTS="${AGENTS_REPO:-$HOME/Documents/Projects/sportsdata-agents}"
 FRAMES="${FRAMES:-18}"
 RACING_SPACING="${RACING_SPACING:-5}"     # seconds between racing frames
 SPORTS_SPAN_MIN="${SPORTS_SPAN_MIN:-120}" # minutes of history the sports sweep covers
-MIN_FRAMES_WITH_DATA="${MIN_FRAMES_WITH_DATA:-12}"  # reject thin captures
+MIN_FRAMES_WITH_DATA="${MIN_FRAMES_WITH_DATA:-12}"  # frames that must carry entries
+MIN_ENTRIES="${MIN_ENTRIES:-4}"   # …and how many races/games the richest frame needs
 
 log() { printf '[refresh %s] %s\n' "$(date '+%H:%M:%S')" "$*"; }
 
 # Reject a capture unless enough frames actually carry games/races — a 3am run or a
 # cleared warehouse otherwise publishes an empty board over a good one.
 validate() {
-  python3 - "$1" "$2" "$MIN_FRAMES_WITH_DATA" <<'PY'
+  python3 - "$1" "$2" "$MIN_FRAMES_WITH_DATA" "$MIN_ENTRIES" <<'PY'
 import json, sys
-path, kind, need = sys.argv[1], sys.argv[2], int(sys.argv[3])
+path, kind, need, need_entries = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4])
 try:
     frames = json.load(open(path))
 except Exception as exc:
@@ -38,9 +39,17 @@ except Exception as exc:
 if not isinstance(frames, list) or not frames:
     print("not a non-empty frame list"); sys.exit(1)
 key = "board" if kind == "racing" else "games"
-good = sum(1 for f in frames if f.get(key))
-print(f"{good}/{len(frames)} frames carry {key}")
-sys.exit(0 if good >= need else 1)
+counts = [len(f.get(key) or ()) for f in frames]
+good = sum(1 for c in counts if c)
+peak = max(counts, default=0)
+print(f"{good}/{len(frames)} frames carry {key}; richest frame has {peak}")
+# Non-empty is not enough: a 7am board with a single race in the horizon would
+# otherwise overwrite a rich afternoon capture. Require real depth too.
+if good < need:
+    print(f"  → too few populated frames (need {need})"); sys.exit(1)
+if peak < need_entries:
+    print(f"  → too thin (need {need_entries}+ {key} entries)"); sys.exit(1)
+sys.exit(0)
 PY
 }
 
