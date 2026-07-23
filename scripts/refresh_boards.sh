@@ -14,7 +14,12 @@
 set -euo pipefail
 
 WHICH="${1:-both}"
-SITE="$(cd "$(dirname "$0")/.." && pwd)"
+# NOT derived from $0. Under launchd this runs from an installed copy in
+# ~/Library, because macOS refuses bash both reading a script and writing files
+# under ~/Documents ("Operation not permitted" from cp and git alike) — so the
+# publishing clone lives outside ~/Documents too. Override with SITE_REPO.
+SITE="${SITE_REPO:-$HOME/Documents/Projects/sportsdata-site}"
+[ -d "$SITE/.git" ] || { echo "[refresh] $SITE is not a git repo — set SITE_REPO"; exit 1; }
 RACING="${RACING_REPO:-$HOME/Documents/Projects/racing-money-flow}"
 AGENTS="${AGENTS_REPO:-$HOME/Documents/Projects/sportsdata-agents}"
 
