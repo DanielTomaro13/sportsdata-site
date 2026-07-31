@@ -82,7 +82,12 @@ fi
 
 if [ "$WHICH" = "sports" ] || [ "$WHICH" = "both" ]; then
   log "sports: sweeping $FRAMES frames over ${SPORTS_SPAN_MIN}m of history …"
-  PY="$AGENTS/.venv/bin/python"; [ -x "$PY" ] || PY="python3"
+  # Prefer the installed venv outside ~/Documents: a launchd job cannot READ
+  # files there (TCC), and the sports sweep needs no repo checkout — the
+  # capture module ships inside the installed package.
+  PY="$HOME/Library/Application Support/sportsdata/venv/bin/python"
+  [ -x "$PY" ] || PY="$AGENTS/.venv/bin/python"
+  [ -x "$PY" ] || PY="python3"
   OUT="$(mktemp -t sports-replay-XXXX.json)"
   if (cd "$AGENTS" && "$PY" -m sportsdata_agents.interfaces.sportsboard.capture_replay \
         "$FRAMES" "$SPORTS_SPAN_MIN" "$OUT" >/dev/null 2>&1); then
