@@ -199,11 +199,28 @@
   main { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
 
   /* ── nav ── */
-  nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 26px 0; }
-  .navlinks { display: flex; gap: 18px; flex-wrap: wrap; }
+  /* Pinned to the top of the viewport, like every other page's bar. Needs its own
+     background so the hero and the marquee do not show through underneath it. */
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px 16px;
+    flex-wrap: wrap; padding: 16px 0; position: sticky; top: 0; z-index: 60;
+    background: rgba(5,8,15,.72); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,.07); }
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    nav { background: rgba(5,8,15,.94); }
+  }
+  .navlinks { display: flex; gap: 8px 18px; flex-wrap: wrap; }
   .navlinks a { color: var(--dim); text-decoration: none; font-size: 14px; transition: color .2s; }
   .navlinks a:hover, .navlinks a:focus-visible { color: var(--ink); }
-  @media (max-width: 900px) { .navlinks { display: none; } }
+  /* Pinned on a phone too, so it stays one row: the links scroll sideways instead of
+     wrapping onto three lines and swallowing a third of the screen. */
+  @media (max-width: 900px) {
+    nav { flex-wrap: nowrap; gap: 14px; padding: 11px 0; }
+    .navlinks { flex-wrap: nowrap; overflow-x: auto; min-width: 0; gap: 14px;
+      scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch; }
+    .navlinks::-webkit-scrollbar { display: none; }
+    .navlinks a { font-size: 13px; white-space: nowrap; }
+    .chip { display: none; }
+  }
   .skiplink { position: absolute; left: -9999px; top: 0; background: var(--acc2); color: #06101f;
     padding: 10px 18px; border-radius: 0 0 10px 0; font-weight: 650; z-index: 100; }
   .skiplink:focus { left: 0; }

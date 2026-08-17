@@ -6,7 +6,17 @@
 
 .sitenav {
   display: flex; align-items: center; justify-content: space-between;
-  gap: 14px 20px; flex-wrap: wrap; margin: 0 0 34px;
+  gap: 14px 20px; flex-wrap: wrap;
+  /* Pinned to the top of the viewport on every page. The bar needs its own opaque-ish
+     background or the page content shows through as it scrolls underneath. */
+  position: sticky; top: 0; z-index: 60;
+  background: rgba(5, 8, 15, .86);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, .07);
+  padding: 14px 0; margin: 0 0 30px;
+}
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .sitenav { background: rgba(5, 8, 15, .72); }
 }
 .sitenav .wordmark {
   font-weight: 800; font-size: 18px; letter-spacing: -.3px;
@@ -24,8 +34,14 @@
 /* The page you are already on stays lit, so the bar doubles as a "you are here". */
 .sitenav-links a[aria-current="page"] { color: var(--ink, #eef2ff); font-weight: 600; }
 
-@media (max-width: 560px) {
-  .sitenav { gap: 10px 14px; margin-bottom: 26px; }
-  .sitenav-links { gap: 6px 14px; }
+/* On a phone the bar is pinned, so it must not eat the viewport: keep it to a single
+   row and let the links scroll sideways rather than wrapping onto three lines. */
+@media (max-width: 700px) {
+  .sitenav { flex-wrap: nowrap; gap: 14px; padding: 11px 0; margin-bottom: 22px; }
+  .sitenav-links {
+    flex-wrap: nowrap; overflow-x: auto; min-width: 0; gap: 14px;
+    scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;
+  }
+  .sitenav-links::-webkit-scrollbar { display: none; }
   .sitenav-links a { font-size: 13px; }
 }

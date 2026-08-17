@@ -403,8 +403,9 @@ footer a { color:var(--dim); }
         <h4>Four decisions worth stealing</h4>
         <ul class="reasons">
           <li><b>Groups, not capabilities — a measured 38× saving</b>
-          Capability tags are the cross-provider unit, and the old rule was to prefer them. With 62
-          providers in the catalogue they <i>widen</i> the tool set instead of narrowing it:
+          Capability tags are the cross-provider unit, and the old rule was to prefer them. With
+          <span data-cat="providers">63</span> providers in the catalogue they <i>widen</i> the tool
+          set instead of narrowing it:
           <code style="font-family:var(--mono);font-size:12px;color:var(--acc3)">ref.players</code>
           alone matches a dozen providers. The thirteen capabilities this agent needs resolve to 289
           tools — about 115k tokens of definitions against a 120k budget, before a single question is
@@ -567,6 +568,16 @@ footer a { color:var(--dim); }
     <a href="https://github.com/DanielTomaro13/sportsdata-mcp">GitHub ↗</a></span>
   </footer>
 </main>
+<script>
+// The provider count in the tool-budget argument has to stay true as the catalogue grows —
+// a hand-typed figure is exactly the kind of thing that goes stale and undercuts the point.
+// Same [data-cat] convention the homepage uses.
+fetch("/catalogue.json").then(r => r.ok ? r.json() : null).then(c => {
+  const provs = c && (c.providers || c);
+  if (!Array.isArray(provs) || !provs.length) return;
+  document.querySelectorAll('[data-cat="providers"]').forEach(el => el.textContent = provs.length);
+}).catch(() => {});
+</script>
 <!-- Cloudflare Web Analytics. The token is a PUBLIC site identifier, not a
      secret — it ships in the HTML of every page by design. -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5740db870bb34d4b844d2a9d8cce3455"}'></script>
