@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — sportsdata</title>
-<meta name="description" content="How sportsdata handles personal information: what is collected, what never leaves your machine, who data is shared with, and your rights.">
+<meta name="description" content="What sportsdata collects (almost nothing), the cookie-free analytics we use, what the software sends where, and your rights.">
 <link rel="canonical" href="https://sportsdata-ai.com/privacy.html">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#05080f">
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="sportsdata">
 <meta property="og:url" content="https://sportsdata-ai.com/privacy.html">
 <meta property="og:title" content="Privacy Policy — sportsdata">
-<meta property="og:description" content="What sportsdata collects, what never leaves your machine, and your rights.">
+<meta property="og:description" content="What sportsdata collects, the cookie-free analytics we use, and your rights.">
 <meta property="og:image" content="https://sportsdata-ai.com/assets/og-cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://sportsdata-ai.com/assets/og-cover.jpg">
@@ -52,82 +52,74 @@
   <div class="crumbs"><a href="/">Home</a> › <span aria-current="page">Privacy Policy</span></div>
   <a class="wordmark" href="/" style="text-decoration:none;color:#eef2ff">sports<span>data</span></a>
   <h1>Privacy Policy</h1>
-  <p class="dim">Last updated: 17 August 2026</p>
+  <p class="dim">Last updated: 11 August 2026</p>
 
-  <div class="banner">Short version: <b>we don't collect anything.</b> sportsdata is free and
-  open source, there is no account to create, and the software runs entirely on your own
-  machine.</div>
+  <p>This policy explains how <b>sportsdata</b> handles personal information. The short
+  version: this website collects page analytics and nothing else, and the software
+  itself runs entirely on your own machine.</p>
 
-  <p>This policy explains how <b>sportsdata</b> handles personal information across the
-  sportsdata MCP data plane, the agent workbench app, and this website.</p>
-
-  <h2>1. What we collect</h2>
-  <p><b>Nothing.</b> There is no account, no sign-up, no licence key and no payment, so there
-  are no account, billing or entitlement records to hold. Specifically:</p>
+  <h2>1. What this website collects</h2>
   <ul>
-    <li>We do <b>not</b> collect your name, email address or payment details.</li>
-    <li>We do <b>not</b> receive your AI conversations, prompts or results. The MCP server runs
-      on your machine and calls upstream data providers directly — nothing routes through us.</li>
-    <li>We do <b>not</b> receive your AI model key. It stays in your own client or app config.</li>
-    <li>We run no telemetry, no usage reporting and no crash reporting.</li>
+    <li><b>Page analytics</b> — we use <b>Cloudflare Web Analytics</b>, which records
+      page views, referrer and rough country. It sets <b>no cookies</b>, does no
+      fingerprinting and does not track you across other sites. That is why this site
+      has no cookie banner.</li>
+    <li><b>Nothing else.</b> There are no accounts, no sign-up, no forms and no
+      newsletter. We do not ask for your email and have nowhere to store it.</li>
+    <li><b>The demo is a recording.</b> The interactive demo on the home page plays back
+      a saved transcript from a file. It makes no network request and sends nothing
+      anywhere.</li>
     <li><b>Donations happen off this site.</b> The “Support on Ko-fi” links take you to
       <b>Ko-fi</b>, who handle any payment under their own terms and privacy policy. We never
       see your card details, and we receive no personal information about you from a donation
       beyond whatever name or message you choose to leave there.</li>
   </ul>
 
-  <h2>2. Third parties you contact directly</h2>
-  <p>Because the software runs locally, the network requests it makes go from <b>your machine to
-  the data provider</b>. Those providers (bookmakers, prediction markets, league APIs) will see
-  your IP address and requests, and their own privacy policies apply. We are not in the middle
-  of that and receive no copy of it.</p>
+  <h2>2. What the software collects</h2>
   <ul>
-    <li><b>GitHub</b> — hosts this website (GitHub Pages), the source code and the release
-      downloads. GitHub processes standard web-server logs, including your IP address, to serve
-      and protect those services.</li>
-    <li>If you email us or open a GitHub issue, we obviously receive what you send us, and we
-      use it only to reply.</li>
-    <li>Authorities, where we are required by law.</li>
+    <li><b>Nothing, by default.</b> sportsdata-mcp runs on your machine and talks
+      directly to the sports providers. We never see your queries, your results, or the
+      contents of your AI conversations.</li>
+    <li><b>Usage counters stay local.</b> The server records its own call counts and
+      error rates so you can run <code>sportsdata-mcp stats</code>. That file never
+      leaves your machine.</li>
+    <li><b>Optional telemetry is off unless you turn it on</b>, which takes two
+      deliberate steps and has no default that transmits. Tool arguments are never
+      recorded. See
+      <a href="https://github.com/DanielTomaro13/sportsdata-mcp/blob/main/docs/TELEMETRY.md">docs/TELEMETRY.md</a>
+      for exactly what it would send.</li>
+    <li><b>Your provider keys are yours.</b> Keys you supply for optional providers are
+      read from your own environment and sent only to that provider. We never receive
+      them.</li>
   </ul>
-  <p>We do not sell personal information, and we have nothing to sell.</p>
 
-  <h2>3. Retention &amp; security</h2>
-  <p>We hold no user records, so there is nothing to retain, breach or delete. Correspondence
-  you send us is kept only as long as needed to deal with it. We use reasonable technical
-  measures to protect what little we do hold; no system is perfectly secure.</p>
+  <h2>3. Who we share it with</h2>
+  <p>Nobody. We hold no personal information to share. Cloudflare processes the page
+  analytics described above as our provider; GitHub serves the site and hosts the code.</p>
 
-  <h2>4. Children</h2>
-  <p>sportsdata covers betting markets and is intended for adults <b>18 and over</b>. It is not
-  directed at children and we knowingly collect no information from anyone.</p>
+  <h2>4. Third-party providers</h2>
+  <p>When you run the software it requests data directly from the sports and betting
+  providers it supports. Those requests are between you and them, under their terms and
+  privacy policies — we are not a party to them and never see them.</p>
 
-  <h2>5. Your rights</h2>
-  <p>You may request access to, correction of, or deletion of any personal information we hold —
-  in practice, only correspondence you have sent us. Contact
-  <b>danieltomaro@icloud.com</b>. This policy is intended to be consistent with the
-  <b>Australian Privacy Principles</b>. If you are unhappy with our response you may complain to
-  the Office of the Australian Information Commissioner.</p>
+  <h2>5. Retention &amp; your rights</h2>
+  <p>We hold no personal data about you, so there is nothing to export, correct or
+  delete. Cloudflare's analytics data is aggregate and not tied to an identity. If you
+  believe we hold something about you, contact us and we will look.</p>
 
-  <h2>6. Cookies, tracking &amp; this website</h2>
-  <p>This website sets <b>no cookies</b> and runs <b>no analytics</b> by default. There are no
-  third-party trackers, no advertising pixels, and no fingerprinting. Nothing you do on these
-  pages is recorded by us.</p>
-  <p>If we later enable page analytics, it will be a cookie-free, privacy-preserving counter, and
-  a consent banner will ask you first — it will not load until you accept. Our host (GitHub Pages)
-  processes standard web-server request logs, including your IP address, to serve the site and
-  protect it from abuse.</p>
-  <p>The MCP data plane runs on <b>your own machine</b> and talks directly to upstream data
-  providers. Your prompts, your AI conversations and your model key never pass through us.</p>
-
-  <h2>7. Contact</h2>
-  <p><b>danieltomaro@icloud.com</b> · <b>sportsdata</b>, Victoria, Australia.</p>
+  <h2>6. Contact</h2>
+  <p>Open an issue at
+  <a href="https://github.com/DanielTomaro13/sportsdata-mcp/issues">github.com/DanielTomaro13/sportsdata-mcp</a>.</p>
 
   <footer>
     <a class="wordmark" href="/" style="text-decoration:none;color:#eef2ff">sports<span>data</span></a>
-    <div style="margin-top:8px">© 2026 · <a href="terms.html">Terms</a> ·
-      <a href="accessibility.html">Accessibility</a> · <a href="sitemap.html">Sitemap</a> ·
-      <a href="https://ko-fi.com/danieltomaro" target="_blank" rel="noopener">Support on Ko-fi</a> ·
-      <a href="/">Home</a></div>
+    <div style="margin-top:8px">© 2026 · <a href="terms.html">Terms</a> · <a href="accessibility.html">Accessibility</a> · <a href="sitemap.html">Sitemap</a> · <a href="https://ko-fi.com/danieltomaro" target="_blank" rel="noopener">Support on Ko-fi</a> · <a href="./">Home</a></div>
   </footer>
 </div>
+<!-- Cloudflare Web Analytics. The token is a PUBLIC site identifier, not a
+     secret — it ships in the HTML of every page by design. Privacy-preserving: no
+     cookies, no fingerprinting, no cross-site tracking, which is why privacy.html
+     does not need a cookie banner. -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5740db870bb34d4b844d2a9d8cce3455"}'></script>
 </body>
 </html>

@@ -82,7 +82,7 @@
   <div class="crumbs"><a href="/">Home</a> › <span>Search</span></div>
   <h1>Search</h1>
   <p class="lede">Looks across every page on this site and the full MCP tool catalogue —
-  29 providers, ~522 tools.</p>
+  60+ providers, 750+ tools.</p>
 
   <form action="/search.html" method="get" role="search">
     <label for="q" style="position:absolute;left:-9999px">Search query</label>
@@ -103,10 +103,10 @@
 (() => {
   const PAGES = [
     { t: "Home — live odds & stats in your own AI tool", u: "/",
-      d: "Free, open-source MCP server giving Claude, Cursor or any AI client live sports data and cross-book odds from 29 providers.",
+      d: "Free, open-source MCP server giving Claude, Cursor or any AI client live sports data and cross-book odds from 60+ providers.",
       k: "home mcp server download install claude cursor odds stats free open source afl nrl nba mlb nfl nhl epl cricket golf tennis f1 ufc wnba racing horse greyhound harness sportsbet tab pinnacle unibet pointsbet ladbrokes neds betr dabble fanduel kalshi polymarket" },
     { t: "Browse every tool", u: "/#feeds",
-      d: "Pick an MCP provider to see exactly what it gives you — every tool across 29 data providers.",
+      d: "Pick an MCP provider to see exactly what it gives you — every tool across 60+ data providers.",
       k: "tools catalogue providers browse api endpoints" },
     { t: "Get it — free & open source", u: "/#get",
       d: "Install with uvx sportsdata-mcp serve, add to Cursor, or download the prebuilt app.",
@@ -254,5 +254,10 @@
     });
 })();
 </script>
+<!-- Cloudflare Web Analytics. The token is a PUBLIC site identifier, not a
+     secret — it ships in the HTML of every page by design. Privacy-preserving: no
+     cookies, no fingerprinting, no cross-site tracking, which is why privacy.html
+     does not need a cookie banner. -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5740db870bb34d4b844d2a9d8cce3455"}'></script>
 </body>
 </html>

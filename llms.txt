@@ -1,7 +1,7 @@
 # sportsdata
 
 > A free, open-source Model Context Protocol (MCP) server that gives any AI client live
-> sports data and cross-book betting odds. 29 providers, roughly 522 tools. MIT licensed,
+> sports data and cross-book betting odds. Over 60 providers and 750 tools. MIT licensed,
 > no account and no API key required. Runs on the user's own machine.
 
 sportsdata exposes two things: a **data plane** (the MCP server, usable from Claude Desktop,

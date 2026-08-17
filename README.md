@@ -63,7 +63,20 @@ thank-you page and `.github/FUNDING.yml`. Two rules the copy follows deliberatel
 
 ## Analytics & consent
 
-`window.ANALYTICS_URL` in `index.html` is `null`, so no analytics script loads and no cookies
-are set. Setting it to a GoatCounter endpoint activates a consent banner; the script only
-loads after the visitor accepts, and the choice is stored in `localStorage`, not a cookie.
-If you enable it, check `privacy.html` §6 still describes what actually happens.
+Page analytics is **Cloudflare Web Analytics** — the beacon is at the bottom of every page and
+the token is a public site identifier, not a secret. It is cookie-free with no fingerprinting
+and no cross-site tracking, which is why the site has no cookie banner; `privacy.html` §1 says
+so explicitly. Add the beacon to any new page you create.
+
+`window.ANALYTICS_URL` in `index.html` is a dormant, optional GoatCounter hook set to `null`.
+If you ever point it at a script that *does* set cookies, the consent gate makes it opt-in:
+nothing loads until the visitor accepts, and the choice is stored in `localStorage` rather than
+a cookie. Update `privacy.html` if you turn it on.
+
+## Provider and tool counts
+
+Do not hand-type them in `index.html`. The counts come from `catalogue.json` at runtime via
+`data-cat="providers"`, `data-cat="tools"` and `data-cat="headline"` spans — they were once
+hardcoded and sat at "29 providers · ~522 tools" long after the real figures had passed 60 and
+750. Prose elsewhere (`llms.txt`, `search.html`, `sitemap.html`, `404.html`, the JSON-LD and
+`assets/og-cover.jpg`) is static, so it says "60+" and "750+" rather than exact numbers.

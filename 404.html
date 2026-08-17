@@ -66,7 +66,7 @@
     <div class="code">Error 404</div>
     <h1>That page <span class="grad">isn't in the feed.</span></h1>
     <p class="sub">The link may be out of date, or the page may have moved. Search the
-    catalogue of ~522 tools, or pick up one of the trails below.</p>
+    catalogue of 750+ tools, or pick up one of the trails below.</p>
 
     <form action="/search.html" method="get" role="search">
       <label for="q" class="sr-only" style="position:absolute;left:-9999px">Search sportsdata</label>
@@ -96,5 +96,10 @@
 <script>
   document.getElementById("path").textContent = "requested: " + location.pathname + location.search;
 </script>
+<!-- Cloudflare Web Analytics. The token is a PUBLIC site identifier, not a
+     secret — it ships in the HTML of every page by design. Privacy-preserving: no
+     cookies, no fingerprinting, no cross-site tracking, which is why privacy.html
+     does not need a cookie banner. -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5740db870bb34d4b844d2a9d8cce3455"}'></script>
 </body>
 </html>

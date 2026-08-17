@@ -289,6 +289,11 @@ footer a {{ color:var(--dim); }}
     <a href="https://github.com/DanielTomaro13/sportsdata-mcp">GitHub ↗</a></span>
   </footer>
 </main>
+<!-- Cloudflare Web Analytics. The token is a PUBLIC site identifier, not a
+     secret — it ships in the HTML of every page by design. Privacy-preserving: no
+     cookies, no fingerprinting, no cross-site tracking, which is why privacy.html
+     does not need a cookie banner. -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token": "5740db870bb34d4b844d2a9d8cce3455"}}'></script>
 </body>
 </html>
 """
