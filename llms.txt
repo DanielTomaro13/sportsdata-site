@@ -27,7 +27,6 @@ their home region.
 - [Get it](https://sportsdata-ai.com/#get): Install instructions for the MCP data plane and the agent app.
 - [FAQ](https://sportsdata-ai.com/#faq): What MCP is, cost, coverage, installation, privacy.
 - [Agent types](https://sportsdata-ai.com/agents.html): The 28-agent roster grouped into six kinds (router, data specialists, quant, guardrails, domain, meta), the anatomy of an agent spec, and the FPL Manager agent as a full worked example.
-- [Pricing engines](https://sportsdata-ai.com/engines.html): The 224 markets across 15 sports the pricing engines can price, measured from the engines themselves.
 - [Racing board](https://sportsdata-ai.com/board/): Live racing money-flow terminal — firmers, fair price, value across Sportsbet, PointsBet and Betfair.
 - [Sports board](https://sportsdata-ai.com/sports/): Team-sports terminal using prediction markets and the exchange as the sharp line.
 - [Search](https://sportsdata-ai.com/search.html): Search the site and the full tool catalogue.
@@ -36,7 +35,6 @@ their home region.
 ## Machine-readable
 
 - [Tool catalogue (JSON)](https://sportsdata-ai.com/catalogue.json): Every provider and tool, with descriptions, arguments and sample responses.
-- [Pricing engines (JSON)](https://sportsdata-ai.com/engines.json): Engine and market coverage data.
 - [XML sitemap](https://sportsdata-ai.com/sitemap.xml)
 
 ## Source

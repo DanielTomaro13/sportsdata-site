@@ -10,13 +10,10 @@
   /* Pinned to the top of the viewport on every page. The bar needs its own opaque-ish
      background or the page content shows through as it scrolls underneath. */
   position: sticky; top: 0; z-index: 60;
-  background: rgba(5, 8, 15, .86);
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  background: rgba(5, 8, 15, .93);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255, 255, 255, .07);
   padding: 14px 0; margin: 0 0 30px;
-}
-@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
-  .sitenav { background: rgba(5, 8, 15, .72); }
 }
 .sitenav .wordmark {
   font-weight: 800; font-size: 18px; letter-spacing: -.3px;
@@ -36,8 +33,25 @@
 
 /* On a phone the bar is pinned, so it must not eat the viewport: keep it to a single
    row and let the links scroll sideways rather than wrapping onto three lines. */
+/* Full-bleed variant: wrap the bar in <div class="navbar"> and the background runs edge
+   to edge instead of stopping at the content column. Needed wherever the page background
+   is not flat — the 404's orbs showed past the ends of a column-width bar. */
+.navbar {
+  position: sticky; top: 0; z-index: 60;
+  background: rgba(5, 8, 15, .93);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, .07);
+}
+.navbar { margin-bottom: 30px; }
+.navbar .sitenav {
+  position: static; background: none; border-bottom: 0;
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+  max-width: 1060px; margin: 0 auto; padding: 14px 24px;
+}
+
 @media (max-width: 700px) {
   .sitenav { flex-wrap: nowrap; gap: 14px; padding: 11px 0; margin-bottom: 22px; }
+  .navbar .sitenav { padding: 11px 20px; }
   .sitenav-links {
     flex-wrap: nowrap; overflow-x: auto; min-width: 0; gap: 14px;
     scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;

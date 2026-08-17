@@ -114,11 +114,18 @@ table.ladder{width:100%;border-collapse:collapse;margin:2px 0}
 .banner span:first-child{font-weight:800;letter-spacing:1px;color:var(--blue)}
 .banner code{color:var(--blue);background:color-mix(in srgb,var(--blue) 12%,transparent);padding:1px 5px;border-radius:4px;font-size:10px}
 
-/* Site navigation inside the terminal topbar — the boards keep their own chrome,
-   but every page on the site needs a way back into the rest of it from the top. */
-.sitelinks { display: flex; align-items: center; gap: 12px; }
+/* Site navigation inside the terminal topbar. The boards keep their own chrome, but
+   they are still pages on the site and need an obvious way back — the first item is a
+   bordered button, not another line of muted terminal text, because a grey uppercase
+   link among the tickers reads as a status label rather than a way out. */
+.sitelinks { display: flex; align-items: center; gap: 10px; }
 .sitelinks a { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase;
   color: var(--muted); text-decoration: none; white-space: nowrap; }
 .sitelinks a:hover { color: var(--ink); }
-.sitelinks a[aria-current="page"] { color: var(--ink); }
-@media (max-width: 900px) { .sitelinks a.opt { display: none; } }
+.sitelinks a.back {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--ink); border: 1px solid var(--line2); background: var(--panel2);
+  border-radius: 5px; padding: 4px 10px; font-weight: 700;
+}
+.sitelinks a.back:hover { border-color: var(--ink2); background: var(--panel); }
+@media (max-width: 760px) { .sitelinks a.opt { display: none; } }
