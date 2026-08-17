@@ -318,3 +318,12 @@ footer a { color: var(--muted); }
 .pxchip:hover { border-color: var(--down); }
 .pxresult { font-family: var(--mono); font-size: 13px; margin-left: 6px; }
 .pxresult b { font-size: 16px; }
+
+/* Site navigation inside the terminal topbar — the boards keep their own chrome,
+   but every page on the site needs a way back into the rest of it from the top. */
+.sitelinks { display: flex; align-items: center; gap: 12px; }
+.sitelinks a { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--muted); text-decoration: none; white-space: nowrap; }
+.sitelinks a:hover { color: var(--ink); }
+.sitelinks a[aria-current="page"] { color: var(--ink); }
+@media (max-width: 900px) { .sitelinks a.opt { display: none; } }

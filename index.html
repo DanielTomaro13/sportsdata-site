@@ -458,11 +458,13 @@
     <div class="wordmark">sports<span>data</span></div>
     <div class="navlinks">
       <a href="#feeds">Tools</a>
+      <a href="agents.html">Agents</a>
       <a href="engines.html">Pricing engines</a>
       <a href="board/">Racing board</a>
       <a href="sports/">Sports board</a>
       <a href="#faq">FAQ</a>
       <a href="#get">Get it</a>
+      <a href="search.html">Search</a>
     </div>
     <div class="chip">Free &amp; <b>open source</b></div>
   </nav>
@@ -633,6 +635,70 @@
         <span class="live"></span><span id="foot-note">pick a prompt to run the demo</span>
         <button class="replay" id="replay" hidden>↻ replay</button>
       </div>
+    </div>
+  </section>
+
+  <section id="agents">
+    <style>
+      .agrid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));max-width:1000px;margin:0 auto}
+      /* these are anchors, so colour must be set explicitly — index.html has no global a{} rule
+         and the headings would otherwise render as default browser-blue link text */
+      .acard{display:block;text-decoration:none;color:var(--ink);
+        background:var(--card);border:1px solid var(--card-border);border-radius:16px;padding:18px 20px;
+        transition:transform .3s var(--ease),border-color .3s}
+      .acard:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.22)}
+      .acard .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+        color:var(--acc1);margin-bottom:7px}
+      .acard h3{font-size:15.5px;margin-bottom:5px;color:var(--ink)}
+      .acard p{font-size:13px;color:var(--dim);line-height:1.55}
+      .acard .who{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+      .acard .who span{font-family:var(--mono);font-size:10.5px;padding:2px 8px;border-radius:999px;
+        background:rgba(255,255,255,.05);border:1px solid var(--card-border);color:var(--faint,#62748f)}
+      .aftr{max-width:1000px;margin:18px auto 0;display:flex;flex-wrap:wrap;gap:14px;align-items:center;
+        justify-content:space-between;border:1px solid var(--card-border);border-radius:16px;
+        background:var(--card);padding:18px 22px}
+      .aftr p{font-size:13.5px;color:var(--dim);margin:0;max-width:62ch}
+      .aftr p b{color:var(--ink)}
+      .aftr a{flex:none;font-size:13.5px;color:var(--acc2);text-decoration:none;font-weight:600}
+    </style>
+    <div class="sec-head"><h2>Which agent to leverage</h2>
+      <p>Twenty-eight specialists ship with the app, in six kinds. You rarely have to pick — the
+      orchestrator routes for you — but it's worth knowing what's on the bench.</p></div>
+    <div class="agrid">
+      <a class="acard" href="agents.html">
+        <div class="k">Kind 01–02</div>
+        <h3>Router &amp; data specialists</h3>
+        <p>A toolless orchestrator that delegates, and desks that each own one slice of the data
+        plane — odds, stats, racing, prediction markets, news.</p>
+        <div class="who"><span>orchestrator</span><span>odds_specialist</span><span>racing_analyst</span></div>
+      </a>
+      <a class="acard" href="agents.html">
+        <div class="k">Kind 03–04</div>
+        <h3>Quant &amp; guardrails</h3>
+        <p>Sandboxed modelling, backtests and arb hunting — then the ledger agents that keep the
+        record straight and gate sizing against your bankroll.</p>
+        <div class="who"><span>modelling</span><span>backtester</span><span>bankroll_manager</span></div>
+      </a>
+      <a class="acard" href="agents.html#fpl">
+        <div class="k">Kind 05</div>
+        <h3>Domain agents</h3>
+        <p>Where the competition's rulebook is the hard part, not the data. The <b style="color:var(--ink)">FPL
+        Manager</b> — squad, captaincy, chips — is the worked example, spec and all.</p>
+        <div class="who"><span>fpl_manager</span><span>fantasy_advisor</span></div>
+      </a>
+      <a class="acard" href="agents.html">
+        <div class="k">Kind 06</div>
+        <h3>Meta agents</h3>
+        <p>The generalist catches what nothing else covers and writes a reusable skill from it; the
+        builder turns a recurring need into a versioned agent of your own.</p>
+        <div class="who"><span>generalist</span><span>agent_builder</span></div>
+      </a>
+    </div>
+    <div class="aftr">
+      <p><b>Every agent is a spec file:</b> a narrow tool surface, a prompt full of that domain's
+      traps, and hard ceilings on calls, tokens, time and dollars. The full roster, the anatomy of a
+      spec, and the FPL agent end to end →</p>
+      <a href="agents.html">See the agent types →</a>
     </div>
   </section>
 
@@ -883,6 +949,7 @@ uvx sportsdata-mcp serve
         <a href="#feeds">Browse every tool</a>
         <a href="#get">Download</a>
         <a href="#demo">Watch the demo</a>
+        <a href="agents.html">Agent types</a>
         <a href="engines.html">Pricing engines</a>
       </div>
       <div>

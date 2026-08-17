@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Types — Which Specialist to Leverage | sportsdata</title>
+<meta name="description" content="The sportsdata agent roster explained: six kinds of specialist agent, what each is for, when to leverage it, and a full worked example — the FPL Manager agent, spec and all.">
+<link rel="canonical" href="https://sportsdata-ai.com/agents.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#05080f">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sportsdata">
+<meta property="og:url" content="https://sportsdata-ai.com/agents.html">
+<meta property="og:title" content="Agent types — which specialist to leverage">
+<meta property="og:description" content="Six kinds of agent, 28 of them in the roster, and a full worked example: the FPL Manager agent from spec file to answer.">
+<meta property="og:image" content="https://sportsdata-ai.com/assets/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agent types — which specialist to leverage">
+<meta name="twitter:description" content="Six kinds of agent, and a worked example: the FPL Manager agent from spec file to answer.">
+<meta name="twitter:image" content="https://sportsdata-ai.com/assets/og-cover.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sportsdata-ai.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Agent types", "item": "https://sportsdata-ai.com/agents.html" }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/nav.css">
+<style>
+:root {
+  --bg:#05080f; --ink:#eef2ff; --dim:#8e97b3; --faint:#62748f;
+  --card:rgba(255,255,255,.035); --card-border:rgba(255,255,255,.08);
+  --acc1:#6e8bff; --acc2:#3dd6f5; --acc3:#7cf5c8; --ok:#4ade80; --warn:#fbbf24;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; }
+.grid-bg { position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:64px 64px; }
+main { position:relative; z-index:1; max-width:1060px; margin:0 auto; padding:28px 20px 80px; }
+nav { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:48px; }
+.wordmark { font-weight:700; letter-spacing:-.02em; font-size:19px; }
+.wordmark span { background:linear-gradient(90deg,var(--acc1),var(--acc2));
+  -webkit-background-clip:text; background-clip:text; color:transparent; }
+nav a { color:var(--dim); text-decoration:none; font-size:14px; }
+nav a:hover { color:var(--ink); }
+a { color:var(--acc2); }
+h1 { font-size:clamp(30px,5vw,46px); line-height:1.1; letter-spacing:-.03em; margin:0 0 14px; }
+h1 .grad { background:linear-gradient(90deg,var(--acc1) 0%,var(--acc2) 45%,var(--acc3) 90%);
+  -webkit-background-clip:text; background-clip:text; color:transparent; }
+h2 { font-size:24px; letter-spacing:-.02em; margin:64px 0 8px; }
+h3 { font-size:16px; margin:0 0 6px; letter-spacing:-.01em; }
+h4 { font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--dim);
+  margin:16px 0 6px; font-weight:600; }
+.lede { color:var(--dim); max-width:68ch; margin:0 0 22px; font-size:15px; }
+.sub { color:var(--dim); max-width:64ch; margin:0 0 26px; }
+.stats { display:flex; flex-wrap:wrap; gap:12px; margin:26px 0 8px; }
+.stat { flex:1 1 150px; background:var(--card); border:1px solid var(--card-border);
+  border-radius:14px; padding:14px 16px; }
+.stat b { display:block; font-size:30px; line-height:1.15; letter-spacing:-.02em; }
+.stat span { color:var(--dim); font-size:12.5px; }
+
+/* the six kinds */
+.kinds { display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); margin-top:22px; }
+.kind { background:var(--card); border:1px solid var(--card-border); border-radius:16px;
+  padding:20px 22px; display:flex; flex-direction:column; }
+.kind .k { font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--acc1); margin-bottom:8px; }
+.kind p { font-size:13.8px; color:var(--dim); margin:0 0 12px; line-height:1.6; }
+.kind .use { font-size:13px; color:var(--ink); border-left:2px solid var(--acc3);
+  padding-left:11px; margin:0 0 14px; }
+.kind .use b { color:var(--acc3); font-weight:600; }
+.who { display:flex; flex-wrap:wrap; gap:5px; margin-top:auto; }
+.who .a { font-family:var(--mono); font-size:11px; padding:3px 9px; border-radius:999px;
+  background:rgba(255,255,255,.05); border:1px solid var(--card-border); color:var(--dim); }
+
+/* roster table */
+.tablewrap { overflow-x:auto; border:1px solid var(--card-border); border-radius:14px;
+  background:var(--card); margin-top:16px; }
+table { border-collapse:collapse; width:100%; font-size:14px; }
+th,td { text-align:left; padding:11px 14px; border-bottom:1px solid var(--card-border); vertical-align:top; }
+tbody tr:last-child td { border-bottom:0; }
+th { font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--dim); font-weight:600; white-space:nowrap; }
+td.id { font-family:var(--mono); font-size:12.5px; color:var(--acc3); white-space:nowrap; }
+td.what { color:var(--dim); font-size:13.5px; }
+td.kindcol { font-size:12px; color:var(--faint); white-space:nowrap; }
+.tier { font-family:var(--mono); font-size:11px; padding:2px 8px; border-radius:999px;
+  background:rgba(255,255,255,.05); color:var(--dim); }
+.tier.fast { color:var(--acc3); }
+.tier.strong { color:var(--acc1); }
+
+/* callout */
+.note { border:1px solid rgba(251,191,36,.28); background:rgba(251,191,36,.05);
+  border-radius:14px; padding:16px 20px; font-size:13.8px; color:var(--dim); margin-top:22px; }
+.note b { color:var(--warn); }
+.note.blue { border-color:rgba(110,139,255,.28); background:rgba(110,139,255,.05); }
+.note.blue b { color:var(--acc2); }
+
+/* worked example */
+.example { border:1px solid var(--card-border); border-radius:18px; background:var(--card);
+  padding:0; overflow:hidden; margin-top:20px; }
+.exhead { padding:22px 24px 18px; border-bottom:1px solid var(--card-border); }
+.exhead .badge { display:inline-block; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--warn); border:1px solid rgba(251,191,36,.35); border-radius:999px; padding:3px 10px;
+  margin-bottom:10px; }
+.exhead h3 { font-size:22px; letter-spacing:-.02em; margin-bottom:6px; }
+.exhead p { color:var(--dim); font-size:14px; margin:0; max-width:70ch; }
+.exgrid { display:grid; grid-template-columns:1fr 1fr; }
+@media(max-width:820px){ .exgrid { grid-template-columns:1fr; } }
+.expane { padding:20px 24px; }
+.expane + .expane { border-left:1px solid var(--card-border); }
+@media(max-width:820px){ .expane + .expane { border-left:0; border-top:1px solid var(--card-border); } }
+pre { margin:0; font-family:var(--mono); font-size:12px; line-height:1.65; color:var(--dim);
+  overflow-x:auto; white-space:pre; }
+pre .c { color:var(--faint); }
+pre .k { color:var(--acc1); }
+pre .v { color:var(--acc3); }
+.reasons { list-style:none; padding:0; margin:0; }
+.reasons li { font-size:13.6px; color:var(--dim); padding:11px 0; border-top:1px solid var(--card-border); line-height:1.6; }
+.reasons li:first-child { border-top:0; padding-top:0; }
+.reasons li b { color:var(--ink); font-weight:600; display:block; margin-bottom:2px; }
+
+/* budget bar */
+.budget { margin-top:16px; }
+.bline { display:flex; align-items:center; gap:10px; margin-bottom:8px; font-size:12.5px; }
+.bline .lab { width:150px; flex:none; color:var(--dim); font-family:var(--mono); font-size:11.5px; }
+.btrack { flex:1; height:8px; border-radius:99px; background:rgba(255,255,255,.06); overflow:hidden; }
+.bfill { height:100%; border-radius:99px; }
+.bfill.bad { background:linear-gradient(90deg,#f87171,#fbbf24); }
+.bfill.good { background:linear-gradient(90deg,var(--acc1),var(--acc3)); }
+.bline .num { width:96px; flex:none; text-align:right; font-family:var(--mono); font-size:11.5px; color:var(--dim); }
+
+/* transcript */
+.session { border:1px solid var(--card-border); border-radius:14px; overflow:hidden; margin-top:16px;
+  background:rgba(255,255,255,.02); }
+.sbar { display:flex; align-items:center; gap:7px; padding:9px 14px; border-bottom:1px solid var(--card-border); }
+.sbar .d { width:9px; height:9px; border-radius:99px; background:rgba(255,255,255,.16); }
+.sbar .t { font-family:var(--mono); font-size:11.5px; color:var(--faint); margin-left:6px; }
+.sbody { padding:16px 18px; }
+.sq { font-size:14px; color:var(--ink); margin:0 0 12px; }
+.sq::before { content:"› "; color:var(--acc2); }
+.trace { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px; }
+.trace .tk { font-family:var(--mono); font-size:11px; color:var(--dim); border:1px solid var(--card-border);
+  border-radius:8px; padding:3px 9px; background:rgba(255,255,255,.025); }
+.trace .tk b { color:var(--acc3); font-weight:600; }
+.sa { font-size:13.8px; color:var(--dim); line-height:1.7; margin:0; }
+.sa strong { color:var(--ink); font-weight:600; }
+.smeta { font-family:var(--mono); font-size:11.5px; color:var(--faint); margin-top:12px;
+  padding-top:11px; border-top:1px solid var(--card-border); }
+
+/* picker */
+.picker { margin-top:18px; border:1px solid var(--card-border); border-radius:14px; overflow:hidden; }
+.prow { display:grid; grid-template-columns:1fr 1fr; gap:0; border-top:1px solid var(--card-border); }
+.prow:first-child { border-top:0; }
+@media(max-width:700px){ .prow { grid-template-columns:1fr; } }
+.pq { padding:14px 18px; font-size:14px; color:var(--ink); background:rgba(255,255,255,.02); }
+.pa { padding:14px 18px; font-size:13.5px; color:var(--dim); border-left:1px solid var(--card-border); }
+@media(max-width:700px){ .pa { border-left:0; padding-top:0; } }
+.pa code { font-family:var(--mono); font-size:12.5px; color:var(--acc3); }
+
+/* spec anatomy */
+dl.anat { margin:16px 0 0; }
+dl.anat dt { font-family:var(--mono); font-size:12.5px; color:var(--acc3); margin-top:16px; }
+dl.anat dd { margin:3px 0 0; font-size:13.6px; color:var(--dim); line-height:1.6; }
+
+.ctas { display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+.btn { display:inline-block; padding:10px 18px; border-radius:10px; font-size:14px; font-weight:600;
+  text-decoration:none; }
+.btn.primary { background:linear-gradient(90deg,var(--acc1),var(--acc3)); color:#06101f; }
+.btn.ghost { border:1px solid rgba(255,255,255,.18); color:var(--ink); }
+footer { margin-top:64px; padding-top:20px; border-top:1px solid var(--card-border);
+  display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between;
+  font-size:12.5px; color:var(--faint); }
+footer a { color:var(--dim); }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<main>
+  <nav class="sitenav" aria-label="Primary">
+    <a class="wordmark" href="/">sports<span>data</span></a>
+    <div class="sitenav-links">
+      <a href="/#feeds">Tools</a>
+      <a href="/agents.html" aria-current="page">Agents</a>
+      <a href="/engines.html">Pricing engines</a>
+      <a href="/board/">Racing board</a>
+      <a href="/sports/">Sports board</a>
+      <a href="/search.html">Search</a>
+    </div>
+  </nav>
+
+  <h1>Which agent should<br><span class="grad">you leverage?</span></h1>
+  <p class="sub">An agent here is three things: a <b>narrow slice of the data plane</b>, a prompt that
+  knows that domain's traps, and a hard budget. Twenty-eight of them ship with the app. This page is
+  the map — what each kind is for, when to reach for it, and one worked example end to end.</p>
+
+  <div class="stats">
+    <div class="stat"><b>21</b><span>product agents, all free</span></div>
+    <div class="stat"><b>7</b><span>ops agents that maintain the platform</span></div>
+    <div class="stat"><b>13</b><span>skills they load on demand</span></div>
+    <div class="stat"><b>1</b><span>orchestrator that routes for you</span></div>
+  </div>
+
+  <p class="lede" style="margin-top:22px">The short version: you rarely pick. Ask the
+  <b style="color:var(--ink)">orchestrator</b> a question and it routes to whichever specialists fit,
+  runs the independent parts in parallel and synthesises one answer. You pick deliberately when you
+  want a specific desk — or when you're building an agent of your own and need to know what shape it
+  should be.</p>
+
+  <h2>Six kinds of agent</h2>
+  <p class="lede">Not a taxonomy for its own sake. Each kind has a different failure mode, so each one
+  is built differently — different tool surface, different model tier, different budget.</p>
+
+  <div class="kinds">
+    <div class="kind">
+      <div class="k">Kind 01 · Router</div>
+      <h3>The orchestrator</h3>
+      <p>Holds <b>no data tools at all</b>. Its whole job is to read your question, decide which
+      specialists it needs, delegate, and stitch the results into one answer. Keeping it toolless is
+      the point — a router that could also fetch odds would fetch odds instead of routing.</p>
+      <div class="use"><b>Leverage it when:</b> almost always. It is the default front door, and the
+      only agent that can fan a question out across several desks at once.</div>
+      <div class="who"><span class="a">orchestrator</span></div>
+    </div>
+
+    <div class="kind">
+      <div class="k">Kind 02 · Data specialists</div>
+      <h3>One surface, read deeply</h3>
+      <p>Each owns a slice of the data plane and the vocabulary that goes with it — odds specialists
+      know vig removal, racing analysts know how to read a racecard, the news scout knows the
+      difference between a confirmed out and beat-writer chatter.</p>
+      <div class="use"><b>Leverage them when:</b> you know the shape of the question — "best price
+      across the books", "what's the ladder", "who's out tonight" — and want it answered without a
+      routing hop.</div>
+      <div class="who"><span class="a">odds_specialist</span><span class="a">stats_specialist</span><span class="a">racing_analyst</span><span class="a">prediction_market_analyst</span><span class="a">news_scout</span></div>
+    </div>
+
+    <div class="kind">
+      <div class="k">Kind 03 · Quant &amp; compute</div>
+      <h3>Sandboxed, and made to be checked</h3>
+      <p>These run real Python in an ephemeral sandbox: fit a model, calibrate it on holdout, replay
+      it against captured odds history. The output is a number with an error bar attached, and every
+      one of them persists what it produced so the next run can be scored against it.</p>
+      <div class="use"><b>Leverage them when:</b> the question is "is this edge real?" rather than
+      "what's the price?". Expect them to be slower and to cost more — they're doing arithmetic, not
+      lookups.</div>
+      <div class="who"><span class="a">modelling</span><span class="a">backtester</span><span class="a">value_scout</span><span class="a">arb_hunter</span><span class="a">data_analysis</span></div>
+    </div>
+
+    <div class="kind">
+      <div class="k">Kind 04 · Ledger &amp; guardrails</div>
+      <h3>Memory and limits</h3>
+      <p>The unglamorous ones, and the ones that make the rest honest. They journal what you did,
+      settle it against results, and gate any recommendation against your bankroll and open exposure.
+      The bet notifier is deliberately <b>denied</b> price tools so it can only format what another
+      agent already found — it cannot go and re-price anything itself.</p>
+      <div class="use"><b>Leverage them when:</b> you want your record kept straight — P&amp;L, ROI,
+      hit-rate, closing-line value — or a sizing sanity check before you act.</div>
+      <div class="who"><span class="a">bet_tracker</span><span class="a">bankroll_manager</span><span class="a">bet_notifier</span><span class="a">market_steward</span><span class="a">concierge</span></div>
+    </div>
+
+    <div class="kind">
+      <div class="k">Kind 05 · Domain agents</div>
+      <h3>One game, one platform</h3>
+      <p>Where a game has its own rulebook, a general agent gives vague answers. FPL has 38 hard
+      deadlines, price changes, four chips and a rolling transfer budget; DFS has salary caps and
+      contest structures. Merging those two prompts would make both worse, so they're separate
+      agents.</p>
+      <div class="use"><b>Leverage them when:</b> the rules of the competition are the hard part —
+      not the data. This is also the kind most worth building yourself.</div>
+      <div class="who"><span class="a">fpl_manager</span><span class="a">fantasy_advisor</span></div>
+    </div>
+
+    <div class="kind">
+      <div class="k">Kind 06 · Meta agents</div>
+      <h3>The ones that grow the platform</h3>
+      <p>The generalist catches whatever no specialist covers, solves it in a sandbox, and — only for
+      genuinely repeatable patterns — crystallises the method into a reusable skill. The agent builder
+      goes one step further and turns a recurring need into a versioned agent of its own. Skills are
+      markdown playbooks, never code: they guide the model and cannot grant a tool.</p>
+      <div class="use"><b>Leverage them when:</b> you've answered the same awkward question three
+      times. Describe the agent you want in plain English and it gets written, scoped and versioned.</div>
+      <div class="who"><span class="a">generalist</span><span class="a">agent_builder</span></div>
+    </div>
+  </div>
+
+  <div class="note blue" style="margin-top:18px"><b>And a seventh, which isn't yours to call.</b>
+  Seven <b style="color:var(--acc2)">ops agents</b> run on a separate plane under the platform's own
+  identity — health checks on the data plane, feed incident triage, eval gates, docs and site drift.
+  They can only ever open a pull request or file an issue; there is no merge tool anywhere in the
+  codebase. A human merges, always.</div>
+
+  <h2>The full roster</h2>
+  <p class="lede">Generated from the spec files in the agents repo. Every agent below ships in the
+  free app — nothing here is held back. "Model" is the class the agent defaults to; you can pin a
+  different model per agent or per conversation.</p>
+
+  <h4>Product plane — the agents you talk to</h4>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Agent</th><th>Kind</th><th>Model</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td class="id">orchestrator</td><td class="kindcol">Router</td><td><span class="tier">balanced</span></td><td class="what">Routes, delegates, synthesises. Holds no data tools of its own.</td></tr>
+        <tr><td class="id">odds_specialist</td><td class="kindcol">Data</td><td><span class="tier">balanced</span></td><td class="what">Cross-book prices: implied probability, fair price, best price, same-game multis.</td></tr>
+        <tr><td class="id">stats_specialist</td><td class="kindcol">Data</td><td><span class="tier fast">fast</span></td><td class="what">Fixtures, results, boxscores, game logs, head-to-head, leaders, ladders, injuries.</td></tr>
+        <tr><td class="id">racing_analyst</td><td class="kindcol">Data</td><td><span class="tier">balanced</span></td><td class="what">Meetings, racecards, next-to-jump, results and dividends, futures, SRM, cross-book win/place.</td></tr>
+        <tr><td class="id">prediction_market_analyst</td><td class="kindcol">Data</td><td><span class="tier">balanced</span></td><td class="what">Kalshi and Polymarket contracts, and the exchange-vs-book gap once the vig is removed.</td></tr>
+        <tr><td class="id">news_scout</td><td class="kindcol">Data</td><td><span class="tier fast">fast</span></td><td class="what">Pre-game intel from X and league news: injuries, team news, weather — confirmed vs chatter.</td></tr>
+        <tr><td class="id">modelling</td><td class="kindcol">Quant</td><td><span class="tier">balanced</span></td><td class="what">Builds and calibrates probability models in the sandbox; persists versions and predictions.</td></tr>
+        <tr><td class="id">value_scout</td><td class="kindcol">Quant</td><td><span class="tier fast">fast</span></td><td class="what">+EV selections: calibrated model probabilities against vig-removed market prices.</td></tr>
+        <tr><td class="id">arb_hunter</td><td class="kindcol">Quant</td><td><span class="tier fast">fast</span></td><td class="what">Cross-book and exchange-vs-book arbitrage; sets standing arb watches.</td></tr>
+        <tr><td class="id">backtester</td><td class="kindcol">Quant</td><td><span class="tier fast">fast</span></td><td class="what">Replays predictions against captured odds history and results: ROI, hit-rate, CLV, variance.</td></tr>
+        <tr><td class="id">data_analysis</td><td class="kindcol">Quant</td><td><span class="tier">balanced</span></td><td class="what">Ad-hoc pandas/matplotlib work in a sandbox: play-by-play, advanced metrics, charts, CSV exports.</td></tr>
+        <tr><td class="id">bet_tracker</td><td class="kindcol">Ledger</td><td><span class="tier fast">fast</span></td><td class="what">Journals your bets (you place them), settles results, reports P&amp;L, ROI, hit-rate, CLV.</td></tr>
+        <tr><td class="id">bankroll_manager</td><td class="kindcol">Ledger</td><td><span class="tier fast">fast</span></td><td class="what">Kelly/flat sizing guidance and the exposure gate — caps against bankroll and open bets.</td></tr>
+        <tr><td class="id">bet_notifier</td><td class="kindcol">Ledger</td><td><span class="tier fast">fast</span></td><td class="what">Formats a finding for delivery: selection, book, price, sizing, reasoning, sources.</td></tr>
+        <tr><td class="id">market_steward</td><td class="kindcol">Ledger</td><td><span class="tier fast">fast</span></td><td class="what">Maintains the canonical market dictionary as data; safe aliases applied, ambiguous ones reported.</td></tr>
+        <tr><td class="id">concierge</td><td class="kindcol">Ledger</td><td><span class="tier fast">fast</span></td><td class="what">Plain-language explainer — turns the team's findings into jargon-free answers.</td></tr>
+        <tr><td class="id">fpl_manager</td><td class="kindcol">Domain</td><td><span class="tier">balanced</span></td><td class="what">Fantasy Premier League: squad review, captaincy, transfers, chip timing. Advisory only — see below.</td></tr>
+        <tr><td class="id">fantasy_advisor</td><td class="kindcol">Domain</td><td><span class="tier">balanced</span></td><td class="what">DFS and season-long fantasy: projections from stats, salary-cap lineup optimisation, player research.</td></tr>
+        <tr><td class="id">generalist</td><td class="kindcol">Meta</td><td><span class="tier">balanced</span></td><td class="what">The catch-all. Solves what no specialist covers, then writes reusable skills from what it learned.</td></tr>
+        <tr><td class="id">agent_builder</td><td class="kindcol">Meta</td><td><span class="tier">balanced</span></td><td class="what">Builds a custom agent from a plain-English goal: drafts the prompt, picks the data and skills, versions it.</td></tr>
+        <tr><td class="id">slack_manager</td><td class="kindcol">Meta</td><td><span class="tier fast">fast</span></td><td class="what">Slack workspace housekeeping — channels, naming, topics, alert routing.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note"><b>The advisory invariant.</b> No product agent places a bet or moves money.
+  Sizing tools return a <i>fraction</i> — never a stake — and money-verb tool names are denied by
+  construction, at spec-validation time. A spec that names one simply fails to load. Everything here
+  is information only, not betting or financial advice, and it's 18+.</div>
+
+  <h4 style="margin-top:34px">Ops plane — maintains the platform itself</h4>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Agent</th><th>Model</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td class="id">mcp_health</td><td><span class="tier fast">fast</span></td><td class="what">Runs doctor plus the contract suite against the data plane; files issues on real breaks.</td></tr>
+        <tr><td class="id">incident_triage</td><td><span class="tier fast">fast</span></td><td class="what">Watches feed health; remediates within an allow-list (retry/disable/enable) or escalates.</td></tr>
+        <tr><td class="id">eval_benchmark</td><td><span class="tier fast">fast</span></td><td class="what">Runs the offline eval gate, records agent metrics, reports regressions.</td></tr>
+        <tr><td class="id">repo_improver</td><td><span class="tier strong">strong</span></td><td class="what">Proposes changes from feedback and telemetry; opens CI-gated PRs a human merges.</td></tr>
+        <tr><td class="id">code_reviewer</td><td><span class="tier strong">strong</span></td><td class="what">Reviews PRs diff-first: approve, or request changes.</td></tr>
+        <tr><td class="id">site_manager</td><td><span class="tier">balanced</span></td><td class="what">Keeps this site honest: uptime, catalogue drift, traffic, badge PRs.</td></tr>
+        <tr><td class="id">docs_keeper</td><td><span class="tier">balanced</span></td><td class="what">Keeps the docs in sync with the code; opens a PR when the roster or structure drifts.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="fpl">Worked example: the FPL Manager</h2>
+  <p class="lede">The newest agent in the roster, and the clearest illustration of how a domain agent
+  gets built. It is currently at <b style="color:var(--ink)">version 0.1.0</b> — Phase 0 of a longer
+  plan — and everything below is the real spec, not an illustration of one.</p>
+
+  <div class="example">
+    <div class="exhead">
+      <span class="badge">In development · v0.1.0 · advisory only</span>
+      <h3>fpl_manager</h3>
+      <p>Reads a real Fantasy Premier League squad and says what it would do — starting XI and bench
+      order, captain and vice, any transfer worth making, chip timing — and why. It takes no actions.
+      FPL's write endpoints exist and their payloads are known; they are deliberately not wired in.</p>
+    </div>
+    <div class="exgrid">
+      <div class="expane">
+        <h4>The spec, in full</h4>
+<pre><span class="c"># src/sportsdata_agents/specs/fpl_manager.yaml</span>
+<span class="k">spec_version</span>: 1
+<span class="k">agent</span>:
+  <span class="k">id</span>: <span class="v">fpl_manager</span>
+  <span class="k">display_name</span>: <span class="v">"FPL Manager"</span>
+  <span class="k">version</span>: <span class="v">0.1.0</span>
+  <span class="k">model_tier</span>: <span class="v">balanced</span>
+  <span class="k">system_prompt</span>: |
+    You advise on a Fantasy Premier
+    League squad. You RECOMMEND;
+    you never act. …
+  <span class="k">tools</span>:
+    <span class="c"># groups, not capabilities — see right</span>
+    <span class="k">mcp_groups</span>: [<span class="v">fpl.players</span>, <span class="v">fpl.reference</span>,
+                 <span class="v">fpl.fixtures</span>, <span class="v">fpl.managers</span>]
+    <span class="k">native</span>: [<span class="v">run_python</span>]
+  <span class="k">forbidden_capabilities</span>: [<span class="v">sport.transactions</span>]
+  <span class="k">sandbox</span>: <span class="v">ephemeral</span>
+  <span class="k">context</span>:
+    <span class="k">retrieval</span>: <span class="v">jit</span>
+    <span class="k">verify</span>: <span class="v">true</span>
+  <span class="k">limits</span>:
+    <span class="k">max_tool_calls</span>: <span class="v">25</span>
+    <span class="k">max_tokens</span>: <span class="v">120000</span>
+    <span class="k">cost_ceiling_usd</span>: <span class="v">0.40</span></pre>
+      </div>
+      <div class="expane">
+        <h4>Four decisions worth stealing</h4>
+        <ul class="reasons">
+          <li><b>Groups, not capabilities — a measured 38× saving</b>
+          Capability tags are the cross-provider unit, and the old rule was to prefer them. With 62
+          providers in the catalogue they <i>widen</i> the tool set instead of narrowing it:
+          <code style="font-family:var(--mono);font-size:12px;color:var(--acc3)">ref.players</code>
+          alone matches a dozen providers. The thirteen capabilities this agent needs resolve to 289
+          tools — about 115k tokens of definitions against a 120k budget, before a single question is
+          asked. Naming FPL's four groups gives it all 16 of its tools for roughly 3k.</li>
+          <li><b>The prompt is mostly a list of traps</b>
+          Not "you are a helpful FPL assistant". It's the five things that make advice silently
+          wrong: <code style="font-family:var(--mono);font-size:12px">selling_price</code> is not
+          <code style="font-family:var(--mono);font-size:12px">now_cost</code> (FPL returns half the
+          rise when you sell); prices are tenths of a million; before the first deadline transfers
+          are unlimited so the 4-point hit doesn't apply; a chip already played is gone; form and
+          ownership come back as strings and compare wrong until converted.</li>
+          <li><b>Advisory is enforced, not promised</b>
+          <code style="font-family:var(--mono);font-size:12px">forbidden_capabilities</code> hard-denies
+          the transactions surface, so the agent cannot acquire write access by accident later.
+          Actually managing a squad is Phase 1 — behind a policy engine and an approval step.</li>
+          <li><b>Separate from fantasy_advisor on purpose</b>
+          That one is DFS-shaped: salary caps, contest rules, cash versus GPP. Season-long FPL is a
+          different game, and merging the prompts would make both vaguer.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h4 style="margin-top:30px">Why the tool budget is the whole ballgame</h4>
+  <div class="budget">
+    <div class="bline"><span class="lab">13 capabilities</span>
+      <span class="btrack"><span class="bfill bad" style="width:96%"></span></span>
+      <span class="num">289 tools</span></div>
+    <div class="bline"><span class="lab">4 groups</span>
+      <span class="btrack"><span class="bfill good" style="width:2.5%"></span></span>
+      <span class="num">16 tools</span></div>
+    <div class="bline"><span class="lab" style="color:var(--faint)">context budget</span>
+      <span class="btrack" style="background:none"></span>
+      <span class="num" style="color:var(--faint)">120k tokens</span></div>
+  </div>
+  <p class="lede" style="margin-top:10px;font-size:13.5px">Every tool schema rides on every single
+  call. The capability route spends ~115k of a 120k budget describing tools the agent will never use;
+  the group route spends ~3k. <b style="color:var(--ink)">Rule of thumb: if the agent plays one game
+  on one platform, name the groups. If it genuinely spans providers, name capabilities.</b></p>
+
+  <h4 style="margin-top:34px">What an answer looks like</h4>
+  <div class="session">
+    <div class="sbar"><span class="d"></span><span class="d"></span><span class="d"></span>
+      <span class="t">sportsdata · fpl_manager v0.1.0</span></div>
+    <div class="sbody">
+      <p class="sq">Should I captain Haaland this week, and is my bench order right?</p>
+      <div class="trace">
+        <span class="tk">✓ <b>fpl_gameweeks</b></span>
+        <span class="tk">✓ <b>fpl_my_team</b></span>
+        <span class="tk">✓ <b>fpl_fixtures</b></span>
+        <span class="tk">✓ <b>fpl_players</b></span>
+        <span class="tk">✓ <b>run_python</b></span>
+      </div>
+      <p class="sa">Deadline is <strong>Sat 02:30 AEST</strong> — everything below is relative to that.
+      Your squad reads 3-4-3 with one change needed: <strong>Mbeumo starts ahead of Rogers</strong>
+      (home, difficulty 2, versus an away trip at difficulty 4). Captain <strong>Haaland</strong> —
+      he is the highest-projected option and at <strong>62.4% ownership</strong> the armband elsewhere
+      is a differential play, not a safety play. Name which you're optimising for: against a
+      mini-league you're chasing, the differential is defensible; from in front it isn't.
+      Vice on <strong>Salah</strong>, not your current pick — a benched vice wastes the armband when
+      the captain doesn't play. Bench order 1–3: Rogers, Muric, Van den Berg.
+      <strong>No transfer worth making</strong>; hold the free one. Two flags: Gvardiol is a
+      <strong>75% doubt</strong> (news 18:20), and your two Arsenal players face each other in GW17.</p>
+      <p class="smeta">5 tool calls · $0.11 of a $0.40 ceiling · verified ✓ ·
+        <span style="color:var(--warn)">advisory only — this agent takes no actions</span></p>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:18px"><b>Phase 0 exists to answer one question.</b> Are the
+  agent's decisions actually better than the owner's? That is cheaper and safer to answer with advice
+  than with execution. If the recommendations don't beat the human, automating them would only be
+  automating worse decisions faster — so the write layer stays unbuilt until the advice earns it.</div>
+
+  <h2>Anatomy of a spec</h2>
+  <p class="lede">Every agent in the roster — and every one you build — is this same YAML document.
+  The schema is strict: an unknown field is an error, not a shrug, so a typo fails loudly at load
+  time instead of being silently ignored.</p>
+
+  <dl class="anat">
+    <dt>id · display_name · version</dt>
+    <dd>Identity, and semver. Pinning matters: a workspace can pin an agent version, and loading a
+    deprecated one still works — it warns rather than breaking.</dd>
+
+    <dt>plane: product | ops</dt>
+    <dd>The hard split. Product agents serve you through the gateway; ops agents run under the
+    platform's identity with platform credentials and are reachable only from the operator CLI.</dd>
+
+    <dt>model_tier</dt>
+    <dd><code>fast</code>, <code>balanced</code>, <code>strong</code> — or an explicit
+    <code>provider/model</code>. Most desks are fast; only review and repo work justifies strong.</dd>
+
+    <dt>system_prompt</dt>
+    <dd>Where the domain knowledge lives. The good ones read as a list of the specific ways this
+    domain makes an answer wrong, not as a personality.</dd>
+
+    <dt>tools: mcp_capabilities | mcp_groups | native</dt>
+    <dd>Capabilities span providers; groups scope to one. Native tools are deterministic in-process
+    helpers — vig removal, Kelly fractions, lineup optimisation — that should never be an LLM's
+    guess.</dd>
+
+    <dt>skills</dt>
+    <dd>Markdown playbooks loaded just in time. They guide the model; they cannot grant a tool or
+    bypass a rule.</dd>
+
+    <dt>forbidden_capabilities</dt>
+    <dd>A hard deny-list, checked against the allow-list at validation. Defence in depth: it stops an
+    agent quietly acquiring reach in a later edit.</dd>
+
+    <dt>can_delegate_to</dt>
+    <dd>Which other agents become callable tools. In practice only the orchestrator uses it.</dd>
+
+    <dt>sandbox: none | ephemeral</dt>
+    <dd>Whether the agent can execute code. Ephemeral means a fresh sandbox per run, discarded after.</dd>
+
+    <dt>context · limits</dt>
+    <dd>Retrieval policy, compaction on long runs, verification — and the ceilings: tool calls,
+    steps, tokens, wall-clock, dollars. Every run is capped. There is no unbounded agent.</dd>
+  </dl>
+
+  <h2>How to pick, in practice</h2>
+  <div class="picker">
+    <div class="prow"><div class="pq">"What's the best price on tonight's game?"</div>
+      <div class="pa">Just ask the <code>orchestrator</code>. It'll pull <code>odds_specialist</code>
+      and be done in one hop.</div></div>
+    <div class="prow"><div class="pq">"Is my model actually beating the close?"</div>
+      <div class="pa"><code>backtester</code> directly — it wants your prediction history and the
+      captured odds, and a routing hop adds nothing.</div></div>
+    <div class="prow"><div class="pq">"Who do I captain this week?"</div>
+      <div class="pa"><code>fpl_manager</code>. A general fantasy agent would answer, but vaguely —
+      the FPL rulebook is the hard part, not the data.</div></div>
+    <div class="prow"><div class="pq">"Draw me the shot chart for this series."</div>
+      <div class="pa"><code>data_analysis</code> — sandboxed pandas and matplotlib, artifacts saved
+      to your machine.</div></div>
+    <div class="prow"><div class="pq">"Nothing here does what I need."</div>
+      <div class="pa"><code>generalist</code> solves it now; <code>agent_builder</code> turns it into
+      a permanent agent if it's going to recur.</div></div>
+    <div class="prow"><div class="pq">"I want it to place the bet too."</div>
+      <div class="pa">No agent does that, by construction — not a setting, not a flag. Money-verb
+      tools are denied at spec-validation time.</div></div>
+  </div>
+
+  <h2>Build your own</h2>
+  <p class="lede">The FPL Manager started as a plain-English description of a recurring need. That's
+  the intended path: describe the agent, let the builder draft the prompt, pick the data groups and
+  set the budgets, then version it. It persists locally and runs with
+  <code style="font-family:var(--mono);font-size:13px;color:var(--acc3)">agents run --agent &lt;id&gt;</code>.
+  Nothing leaves your machine.</p>
+
+  <div class="ctas">
+    <a class="btn primary" href="/#get">Download the app — free</a>
+    <a class="btn ghost" href="/#demo">Watch the agents work</a>
+    <a class="btn ghost" href="https://github.com/DanielTomaro13/sportsdata-agents">Specs on GitHub ↗</a>
+  </div>
+
+  <footer>
+    <span>Roster generated from the agent specs · advisory only, not betting or financial advice · 18+</span>
+    <span><a href="/">Home</a> · <a href="/sitemap.html">Sitemap</a> ·
+    <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> ·
+    <a href="https://ko-fi.com/danieltomaro" target="_blank" rel="noopener">Support on Ko-fi ☕</a> ·
+    <a href="https://github.com/DanielTomaro13/sportsdata-mcp">GitHub ↗</a></span>
+  </footer>
+</main>
+<!-- Cloudflare Web Analytics. The token is a PUBLIC site identifier, not a
+     secret — it ships in the HTML of every page by design. -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5740db870bb34d4b844d2a9d8cce3455"}'></script>
+</body>
+</html>

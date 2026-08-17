@@ -10,6 +10,7 @@
 <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/nav.css">
 <style>
   :root{--bg:#05080f;--ink:#eef2ff;--dim:#8e97b3;--faint:#62748f;--acc1:#6e8bff;--acc2:#3dd6f5;
     --acc3:#7cf5c8;--card:rgba(255,255,255,.035);--border:rgba(255,255,255,.1);
@@ -60,9 +61,22 @@
 <body>
 <div class="orb a"></div><div class="orb b"></div><div class="grid-bg"></div>
 
+<!-- width:100% is load-bearing: body is a flex column, and an auto cross-axis margin on a
+     stretched flex item makes it shrink-to-fit instead of filling the row. -->
+<nav class="sitenav" aria-label="Primary" style="width:100%;max-width:1060px;margin:0 auto;padding:28px 24px 0">
+  <a class="wordmark" href="/">sports<span>data</span></a>
+  <div class="sitenav-links">
+    <a href="/#feeds">Tools</a>
+    <a href="/agents.html">Agents</a>
+    <a href="/engines.html">Pricing engines</a>
+    <a href="/board/">Racing board</a>
+    <a href="/sports/">Sports board</a>
+    <a href="/search.html">Search</a>
+  </div>
+</nav>
+
 <div class="wrap">
   <div>
-    <a class="wordmark" href="/">sports<span>data</span></a>
     <div class="code">Error 404</div>
     <h1>That page <span class="grad">isn't in the feed.</span></h1>
     <p class="sub">The link may be out of date, or the page may have moved. Search the
@@ -78,6 +92,7 @@
       <a href="/">Home</a>
       <a href="/#feeds">Browse every tool</a>
       <a href="/#get">Download</a>
+      <a href="/agents.html">Agent types</a>
       <a href="/engines.html">Pricing engines</a>
       <a href="/board/">Racing board</a>
       <a href="/sports/">Sports board</a>

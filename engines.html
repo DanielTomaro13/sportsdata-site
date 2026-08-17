@@ -33,6 +33,7 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="/assets/nav.css">
 <style>
 :root {
   --bg:#05080f; --ink:#eef2ff; --dim:#8e97b3;
@@ -99,13 +100,15 @@ footer a { color:var(--dim); }
 <body>
 <div class="grid-bg"></div>
 <main>
-  <nav>
-    <a class="wordmark" href="/" style="text-decoration:none;color:var(--ink)">sports<span>data</span></a>
-    <div style="display:flex;gap:18px;flex-wrap:wrap">
+  <nav class="sitenav" aria-label="Primary">
+    <a class="wordmark" href="/">sports<span>data</span></a>
+    <div class="sitenav-links">
       <a href="/#feeds">Tools</a>
+      <a href="/agents.html">Agents</a>
+      <a href="/engines.html" aria-current="page">Pricing engines</a>
       <a href="/board/">Racing board</a>
       <a href="/sports/">Sports board</a>
-      <a href="/">← back to sportsdata</a>
+      <a href="/search.html">Search</a>
     </div>
   </nav>
 

@@ -29,6 +29,7 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="/assets/nav.css">
 <style>
   :root{--bg:#05080f;--ink:#eef2ff;--dim:#8e97b3;--faint:#62748f;--acc1:#6e8bff;--acc2:#3dd6f5;
     --acc3:#7cf5c8;--card:rgba(255,255,255,.035);--border:rgba(255,255,255,.1);
@@ -75,9 +76,16 @@
 <body>
 <div class="grid-bg"></div>
 <main>
-  <nav class="top" aria-label="Primary">
+  <nav class="sitenav" aria-label="Primary">
     <a class="wordmark" href="/">sports<span>data</span></a>
-    <a class="home" href="/">← Back to sportsdata</a>
+    <div class="sitenav-links">
+      <a href="/#feeds">Tools</a>
+      <a href="/agents.html">Agents</a>
+      <a href="/engines.html">Pricing engines</a>
+      <a href="/board/">Racing board</a>
+      <a href="/sports/">Sports board</a>
+      <a href="/search.html">Search</a>
+    </div>
   </nav>
 
   <div class="crumbs"><a href="/">Home</a> › <span aria-current="page">Sitemap</span></div>
@@ -97,6 +105,9 @@
       <li><a href="/#demo"><span class="t">Watch the agents work</span>
         <span class="d">A recorded run: the team routes a question, calls real tools, answers with sources.</span>
         <span class="u">/#demo</span></a></li>
+      <li><a href="/agents.html"><span class="t">Agent types</span>
+        <span class="d">The 28-agent roster in six kinds, the anatomy of a spec, and the FPL Manager agent end to end.</span>
+        <span class="u">/agents.html</span></a></li>
       <li><a href="/#get"><span class="t">Get it</span>
         <span class="d">Install into any MCP client, add to Cursor, or download the prebuilt app.</span>
         <span class="u">/#get</span></a></li>

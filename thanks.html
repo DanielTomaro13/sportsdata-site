@@ -11,6 +11,7 @@
 <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/nav.css">
 <style>
   :root{--bg:#05080f;--ink:#eef2ff;--dim:#8e97b3;--faint:#62748f;--acc1:#6e8bff;--acc2:#3dd6f5;
     --acc3:#7cf5c8;--ok:#4ade80;--warn:#fbbf24;--card:rgba(255,255,255,.035);
@@ -74,9 +75,16 @@
 <body>
 <div class="orb a"></div><div class="grid-bg"></div>
 <main>
-  <nav class="top" aria-label="Primary">
+  <nav class="sitenav" aria-label="Primary">
     <a class="wordmark" href="/">sports<span>data</span></a>
-    <a class="home" href="/">← Back to sportsdata</a>
+    <div class="sitenav-links">
+      <a href="/#feeds">Tools</a>
+      <a href="/agents.html">Agents</a>
+      <a href="/engines.html">Pricing engines</a>
+      <a href="/board/">Racing board</a>
+      <a href="/sports/">Sports board</a>
+      <a href="/search.html">Search</a>
+    </div>
   </nav>
 
   <div class="tick" aria-hidden="true">✓</div>

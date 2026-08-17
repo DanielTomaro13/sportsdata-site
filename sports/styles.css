@@ -113,3 +113,12 @@ table.ladder{width:100%;border-collapse:collapse;margin:2px 0}
 .banner.show{display:flex}
 .banner span:first-child{font-weight:800;letter-spacing:1px;color:var(--blue)}
 .banner code{color:var(--blue);background:color-mix(in srgb,var(--blue) 12%,transparent);padding:1px 5px;border-radius:4px;font-size:10px}
+
+/* Site navigation inside the terminal topbar — the boards keep their own chrome,
+   but every page on the site needs a way back into the rest of it from the top. */
+.sitelinks { display: flex; align-items: center; gap: 12px; }
+.sitelinks a { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--muted); text-decoration: none; white-space: nowrap; }
+.sitelinks a:hover { color: var(--ink); }
+.sitelinks a[aria-current="page"] { color: var(--ink); }
+@media (max-width: 900px) { .sitelinks a.opt { display: none; } }

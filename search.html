@@ -11,6 +11,7 @@
 <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/nav.css">
 <style>
   :root{--bg:#05080f;--ink:#eef2ff;--dim:#8e97b3;--faint:#62748f;--acc1:#6e8bff;--acc2:#3dd6f5;
     --acc3:#7cf5c8;--warn:#fbbf24;--card:rgba(255,255,255,.035);--border:rgba(255,255,255,.1);
@@ -74,9 +75,16 @@
 <body>
 <div class="grid-bg"></div>
 <main>
-  <nav class="top" aria-label="Primary">
+  <nav class="sitenav" aria-label="Primary">
     <a class="wordmark" href="/">sports<span>data</span></a>
-    <a class="home" href="/">← Back to sportsdata</a>
+    <div class="sitenav-links">
+      <a href="/#feeds">Tools</a>
+      <a href="/agents.html">Agents</a>
+      <a href="/engines.html">Pricing engines</a>
+      <a href="/board/">Racing board</a>
+      <a href="/sports/">Sports board</a>
+      <a href="/search.html" aria-current="page">Search</a>
+    </div>
   </nav>
 
   <div class="crumbs"><a href="/">Home</a> › <span>Search</span></div>
@@ -114,6 +122,12 @@
     { t: "Watch the agents work", u: "/#demo",
       d: "A recorded preview of the agent app routing a question to a specialist, calling real data tools and answering with sources.",
       k: "demo agents preview video playback" },
+    { t: "Agent types — which specialist to leverage", u: "/agents.html",
+      d: "The full agent roster in six kinds — router, data specialists, quant, guardrails, domain and meta — plus the anatomy of an agent spec and the FPL Manager agent as a worked example.",
+      k: "agents roster specialist orchestrator odds specialist stats racing prediction market modelling backtester value scout arb hunter bet tracker bankroll fantasy fpl fantasy premier league captaincy transfers chips agent builder generalist skills spec yaml capabilities groups ops plane" },
+    { t: "FPL Manager agent", u: "/agents.html#fpl",
+      d: "Fantasy Premier League agent: squad review, captaincy, transfers and chip timing — advisory only, with the full spec and the groups-vs-capabilities tool budget explained.",
+      k: "fpl fantasy premier league agent captain vice transfers wildcard free hit bench boost triple captain chips squad gameweek deadline selling price advisory" },
     { t: "Pricing engines", u: "/engines.html",
       d: "Every market the sportsdata pricing engines can price — 224 markets across 15 sports, measured from the engines themselves.",
       k: "pricing engines markets models coverage sports matrix fair price afl nrl nba mlb sgm same game multi player props totals sampling error" },

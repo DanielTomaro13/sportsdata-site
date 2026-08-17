@@ -1,0 +1,31 @@
+/* The shared site navigation bar.
+   Every page except the homepage (which has its own hero nav) and maintenance.html
+   (deliberately bare — during an outage the links would be dead) links this file and
+   uses the same <nav class="sitenav"> markup, so the bar is identical everywhere.
+   It relies only on the --ink / --dim / --acc1 / --acc2 vars every page already defines. */
+
+.sitenav {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 14px 20px; flex-wrap: wrap; margin: 0 0 34px;
+}
+.sitenav .wordmark {
+  font-weight: 800; font-size: 18px; letter-spacing: -.3px;
+  text-decoration: none; color: var(--ink, #eef2ff); flex: none;
+}
+.sitenav .wordmark span {
+  background: linear-gradient(90deg, var(--acc1, #6e8bff), var(--acc2, #3dd6f5));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.sitenav-links { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }
+.sitenav-links a {
+  color: var(--dim, #8e97b3); text-decoration: none; font-size: 14px; white-space: nowrap;
+}
+.sitenav-links a:hover { color: var(--ink, #eef2ff); }
+/* The page you are already on stays lit, so the bar doubles as a "you are here". */
+.sitenav-links a[aria-current="page"] { color: var(--ink, #eef2ff); font-weight: 600; }
+
+@media (max-width: 560px) {
+  .sitenav { gap: 10px 14px; margin-bottom: 26px; }
+  .sitenav-links { gap: 6px 14px; }
+  .sitenav-links a { font-size: 13px; }
+}
