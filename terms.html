@@ -3,8 +3,37 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>sportsdata — Terms of Service</title>
+<title>Terms of Service — sportsdata</title>
+<meta name="description" content="The terms governing use of the sportsdata MCP data plane: licence, acceptable use, data availability and geo-restriction, disclaimers and liability.">
+<link rel="canonical" href="https://sportsdata-ai.com/terms.html">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#05080f">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="sportsdata">
+<meta property="og:url" content="https://sportsdata-ai.com/terms.html">
+<meta property="og:title" content="Terms of Service — sportsdata">
+<meta property="og:description" content="Licence, acceptable use, data availability, disclaimers and liability for the sportsdata MCP data plane.">
+<meta property="og:image" content="https://sportsdata-ai.com/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sportsdata-ai.com/assets/og-cover.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sportsdata-ai.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Terms of Service", "item": "https://sportsdata-ai.com/terms.html" }
+  ]
+}
+</script>
 <style>
+  .crumbs{font-size:13px;color:#62748f;margin-bottom:20px}
+  .crumbs a{color:#8e97b3;text-decoration:none}
+  .crumbs a:hover{color:#eef2ff}
+  :focus-visible{outline:2px solid #3dd6f5;outline-offset:3px;border-radius:4px}
   :root{--bg:#05080f;--ink:#eef2ff;--dim:#8e97b3;--acc1:#6e8bff;--acc2:#3dd6f5;--border:rgba(255,255,255,.1)}
   *{box-sizing:border-box}
   body{background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
@@ -25,67 +54,96 @@
 </head>
 <body>
 <div class="wrap">
-  <a class="back" href="./">← sportsdata</a>
-  <div class="wordmark">sports<span>data</span></div>
+  <div class="crumbs"><a href="/">Home</a> › <span aria-current="page">Terms of Service</span></div>
+  <a class="wordmark" href="/" style="text-decoration:none;color:#eef2ff">sports<span>data</span></a>
   <h1>Terms of Service</h1>
-  <p class="dim">Last updated: 16 June 2026</p>
+  <p class="dim">Last updated: 17 August 2026</p>
 
-  <p>These Terms govern your use of the sportsdata MCP data plane (the “Service”),
-  operated by <b>sportsdata</b> (“we”, “us”). By subscribing or using the
-  Service you agree to these Terms.</p>
+  <div class="banner">sportsdata is <b>free and open source</b>. There is no account, no
+  subscription, no licence key and no payment — so most of what a commercial service's terms
+  would cover simply doesn't apply here. You may optionally donate via
+  <a href="https://ko-fi.com/danieltomaro" target="_blank" rel="noopener">Ko-fi</a>, but a
+  donation is a voluntary gift: it buys nothing, unlocks nothing, and comes with no warranty,
+  support obligation or refund entitlement.</div>
 
-  <h2>1. What the Service is</h2>
-  <p>The Service provides access to sports and odds data as Model Context Protocol (MCP)
-  tools that you connect to your own AI client (e.g. Claude Desktop, Cursor). You bring
-  your own AI model key. The Service does not include the sportsdata agent application,
-  which is offered separately.</p>
+  <p>These Terms govern your use of the sportsdata MCP data plane, the sportsdata agent
+  workbench app, and this website (together, the “Software”), published by
+  <b>sportsdata</b> (“we”, “us”). By using the Software you agree to these Terms.</p>
 
-  <h2>2. Licence &amp; acceptable use</h2>
+  <h2>1. What the Software is</h2>
+  <p>The Software provides sports and odds data as Model Context Protocol (MCP) tools that you
+  connect to your own AI client (e.g. Claude Desktop, Cursor), plus an optional desktop agent
+  application. It runs <b>on your own machine</b> and talks directly to upstream data providers.
+  You bring your own AI model key and pay your model provider directly for that usage. We do not
+  operate a hosted service on your behalf, and there is nothing to sign up for.</p>
+
+  <h2>2. Licence</h2>
+  <p>The Software is released under the <b>MIT Licence</b>. That licence governs your rights to
+  use, copy, modify, merge, publish, distribute, sublicense and sell copies of it, and it is the
+  authoritative statement of those rights — see the
+  <a href="https://github.com/DanielTomaro13/sportsdata-mcp">source repository</a> for the full
+  text. Nothing in these Terms is intended to reduce the rights the MIT Licence gives you.</p>
+
+  <h2>3. Donations</h2>
+  <p>Donations are handled entirely by <b>Ko-fi</b> under their own terms — we never see your
+  payment details. Donating is voluntary and creates no contract between us: every feature stays
+  free for everyone whether you donate or not, nothing is gated behind it, and it does not
+  entitle you to support, a service level, or a refund. Because a donation is a gift rather than
+  a purchase, it is not a supply of goods or services under the Australian Consumer Law.</p>
+
+  <h2>4. Acceptable use &amp; third-party data</h2>
   <ul>
-    <li>We grant you a personal, non-exclusive, non-transferable licence to use the feeds
-      your subscription includes, for the term you pay for.</li>
-    <li>You must not resell, redistribute, sub-licence, or share your licence key or the
-      Service’s output as a competing data product.</li>
-    <li>You must not reverse-engineer, circumvent the licence, or use the Service
-      unlawfully.</li>
-    <li>Some feeds (e.g. X/Twitter) require your own third-party provider key; supplying
-      and complying with that provider’s terms is your responsibility.</li>
+    <li>The Software retrieves data from third parties (bookmakers, prediction markets, official
+      league APIs). Your use of that data is subject to <b>those providers'</b> terms, not ours,
+      and complying with them is your responsibility.</li>
+    <li>Some feeds require your own third-party provider key; supplying that key and complying
+      with the provider's terms is your responsibility.</li>
+    <li>Do not use the Software unlawfully, to place bets where doing so is illegal for you, or
+      in a way that breaches an upstream provider's terms or rate limits.</li>
+    <li>The Software is intended for adults <b>18 and over</b>.</li>
   </ul>
 
-  <h2>3. Subscriptions &amp; billing</h2>
-  <p>Subscriptions are billed in advance on a recurring monthly basis via our payment
-  processor (Stripe). Adding feeds increases your recurring charge (prorated). You can
-  cancel anytime; cancellation stops future billing and takes effect at the end of the
-  current period. See our <a href="refunds.html">Refund Policy</a>.</p>
-
-  <h2>4. Data — “as is”, availability, geo-restriction</h2>
+  <h2>5. Data — “as is”, availability, geo-restriction</h2>
   <ul>
     <li>Data is provided <b>for information only</b> and is <b>not betting or financial
-      advice</b>.</li>
-    <li>Feeds depend on upstream sources that can change or become unavailable; we do not
-      guarantee uninterrupted availability, accuracy, or completeness.</li>
+      advice</b>. Any prices, projections or model outputs are estimates, and you are solely
+      responsible for any decision you make using them.</li>
+    <li>Feeds depend on upstream sources that can change, break or disappear without notice; we
+      do not guarantee availability, accuracy, or completeness, and providers may be added or
+      removed at any time.</li>
     <li>Some gambling/odds feeds are <b>geo-restricted</b> and may not work from your
-      location. You are responsible for checking availability before subscribing.</li>
+      location.</li>
   </ul>
 
-  <h2>5. Disclaimers &amp; liability</h2>
-  <p>To the maximum extent permitted by law, the Service is provided “as is” without
-  warranties. Nothing in these Terms excludes rights you have under the <b>Australian
-  Consumer Law</b> or other non-excludable laws. Subject to those rights, our aggregate
-  liability is limited to the amount you paid us in the 3 months before the claim.</p>
+  <h2>6. Disclaimers &amp; liability</h2>
+  <p>To the maximum extent permitted by law, the Software is provided <b>“as is”, without
+  warranty of any kind</b>, and we accept no liability for any loss arising from its use —
+  including any betting, trading or financial loss. Nothing in these Terms excludes rights you
+  have under the <b>Australian Consumer Law</b> or other non-excludable laws. Subject to those
+  rights, and because the Software is supplied free of charge, our aggregate liability to you is
+  limited to <b>AUD $0</b>.</p>
 
-  <h2>6. Changes &amp; termination</h2>
-  <p>We may update these Terms or the feed catalogue; material changes will be notified.
-  We may suspend or terminate access for breach. You may stop using the Service at any
-  time.</p>
+  <h2>7. Changes &amp; discontinuation</h2>
+  <p>We may update these Terms, change what the Software does, or stop publishing it entirely,
+  at any time. Because the Software is open source and runs locally, a copy you already have
+  keeps working under the MIT Licence regardless.</p>
 
-  <h2>7. Governing law &amp; contact</h2>
+  <h2>8. Gambling harm</h2>
+  <p>Gambling can be harmful. If it is causing you or someone you know problems, free and
+  confidential help is available in Australia 24/7 from
+  <a href="https://www.gamblinghelponline.org.au/" rel="noopener">Gambling Help Online</a>
+  or on <b>1800 858 858</b>.</p>
+
+  <h2>9. Governing law &amp; contact</h2>
   <p>These Terms are governed by the laws of <b>Victoria, Australia</b>. Questions:
   <b>danieltomaro@icloud.com</b>.</p>
 
   <footer>
-    <div class="wordmark">sports<span>data</span></div>
-    <div>© 2026 · <a href="privacy.html">Privacy</a> · <a href="refunds.html">Refunds</a> · <a href="./">Home</a></div>
+    <a class="wordmark" href="/" style="text-decoration:none;color:#eef2ff">sports<span>data</span></a>
+    <div style="margin-top:8px">© 2026 · <a href="privacy.html">Privacy</a> ·
+      <a href="accessibility.html">Accessibility</a> · <a href="sitemap.html">Sitemap</a> ·
+      <a href="https://ko-fi.com/danieltomaro" target="_blank" rel="noopener">Support on Ko-fi</a> ·
+      <a href="/">Home</a></div>
   </footer>
 </div>
 </body>

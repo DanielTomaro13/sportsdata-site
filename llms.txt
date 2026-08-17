@@ -1,0 +1,57 @@
+# sportsdata
+
+> A free, open-source Model Context Protocol (MCP) server that gives any AI client live
+> sports data and cross-book betting odds. 29 providers, roughly 522 tools. MIT licensed,
+> no account and no API key required. Runs on the user's own machine.
+
+sportsdata exposes two things: a **data plane** (the MCP server, usable from Claude Desktop,
+Cursor or any MCP client) and an optional **agent workbench app** (a local desktop app where
+a team of specialist agents answers questions with visible tool traces). Both are free.
+
+Coverage: AFL, NRL, NBA, MLB, NFL, NHL, EPL, cricket, golf, tennis, F1, UFC, and horse,
+harness and greyhound racing. Odds from 11 bookmakers (Sportsbet, TAB, Pinnacle, Unibet,
+PointsBet, Ladbrokes, Neds, betr, Dabble, FanDuel) plus the Kalshi and Polymarket
+prediction markets, and official league feeds (AFL, NRL, NBA Stats, MLB StatsAPI, ESPN,
+DataGolf, OpenF1, Cricket Australia).
+
+Install: `uvx sportsdata-mcp serve`
+
+Important: sportsdata returns data for information only. It is not betting or financial
+advice, and it is for adults 18 and over. Some bookmaker feeds are geo-restricted outside
+their home region.
+
+## Pages
+
+- [Home](https://sportsdata-ai.com/): What the MCP server is, what it covers, and how to install it.
+- [Browse every tool](https://sportsdata-ai.com/#feeds): The full tool catalogue by provider, with parameters and sample responses.
+- [Get it](https://sportsdata-ai.com/#get): Install instructions for the MCP data plane and the agent app.
+- [FAQ](https://sportsdata-ai.com/#faq): What MCP is, cost, coverage, installation, privacy.
+- [Pricing engines](https://sportsdata-ai.com/engines.html): The 224 markets across 15 sports the pricing engines can price, measured from the engines themselves.
+- [Racing board](https://sportsdata-ai.com/board/): Live racing money-flow terminal — firmers, fair price, value across Sportsbet, PointsBet and Betfair.
+- [Sports board](https://sportsdata-ai.com/sports/): Team-sports terminal using prediction markets and the exchange as the sharp line.
+- [Search](https://sportsdata-ai.com/search.html): Search the site and the full tool catalogue.
+- [Sitemap](https://sportsdata-ai.com/sitemap.html): Every page in one list.
+
+## Machine-readable
+
+- [Tool catalogue (JSON)](https://sportsdata-ai.com/catalogue.json): Every provider and tool, with descriptions, arguments and sample responses.
+- [Pricing engines (JSON)](https://sportsdata-ai.com/engines.json): Engine and market coverage data.
+- [XML sitemap](https://sportsdata-ai.com/sitemap.xml)
+
+## Source
+
+- [sportsdata-mcp](https://github.com/DanielTomaro13/sportsdata-mcp): The MCP data plane.
+- [sportsdata-agents](https://github.com/DanielTomaro13/sportsdata-agents): The agent workbench app.
+
+## Support
+
+sportsdata is built and maintained by one person and is free for everyone. Donations are
+voluntary, unlock nothing, and gate nothing.
+
+- [Support on Ko-fi](https://ko-fi.com/danieltomaro)
+
+## Legal
+
+- [Terms of Service](https://sportsdata-ai.com/terms.html)
+- [Privacy Policy](https://sportsdata-ai.com/privacy.html)
+- [Accessibility Statement](https://sportsdata-ai.com/accessibility.html)

@@ -1,0 +1,8 @@
+# sportsdata — https://sportsdata-ai.com
+# Crawlers are welcome. Utility pages carry <meta name="robots" content="noindex">
+# rather than a Disallow, so the directive is actually seen.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://sportsdata-ai.com/sitemap.xml

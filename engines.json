@@ -1,0 +1,2328 @@
+{
+  "example": [
+    {
+      "line": null,
+      "market": "h2h",
+      "note": "the core line",
+      "odds": 1.66,
+      "probability": 0.6023,
+      "selection": "home",
+      "std_error": 0.00346
+    },
+    {
+      "line": 62.0,
+      "market": "exact",
+      "note": "exact team score \u2014 the non-cumulative twin of the total",
+      "odds": 95.24,
+      "probability": 0.0105,
+      "selection": "home",
+      "std_error": 0.00072
+    },
+    {
+      "line": null,
+      "market": "player_first_scorer",
+      "note": "needs event order, not just a score",
+      "odds": 21.79,
+      "probability": 0.0459,
+      "selection": "Home 1",
+      "std_error": 0.00148
+    },
+    {
+      "line": 1.0,
+      "market": "player_goal_threshold",
+      "note": "a ladder on each player's own mean",
+      "odds": 1.48,
+      "probability": 0.6741,
+      "selection": "Home 1",
+      "std_error": 0.00331
+    },
+    {
+      "line": null,
+      "market": "player_anytime_scorer:both_halves",
+      "note": "a joint condition, counted not assumed",
+      "odds": 2.56,
+      "probability": 0.3907,
+      "selection": "Home 1",
+      "std_error": 0.00345
+    }
+  ],
+  "sports": [
+    {
+      "blocked": 0,
+      "implemented": 32,
+      "missing": 0,
+      "player_bet_types": [
+        {
+          "item": "under_over",
+          "status": "implemented"
+        },
+        {
+          "item": "composite",
+          "status": "implemented"
+        },
+        {
+          "item": "anytime_score",
+          "status": "implemented"
+        },
+        {
+          "item": "first_score",
+          "status": "implemented"
+        },
+        {
+          "item": "last_score",
+          "status": "implemented"
+        },
+        {
+          "item": "one_of_first_x",
+          "status": "implemented"
+        },
+        {
+          "item": "particular_score",
+          "status": "implemented"
+        },
+        {
+          "item": "multi_player",
+          "status": "implemented"
+        },
+        {
+          "item": "multi_player_and",
+          "status": "implemented"
+        },
+        {
+          "item": "multi_player_or",
+          "status": "implemented"
+        },
+        {
+          "item": "head_to_head",
+          "status": "implemented"
+        },
+        {
+          "item": "most_x",
+          "status": "implemented"
+        }
+      ],
+      "sport": "afl",
+      "stat_periods": [
+        {
+          "item": "match",
+          "status": "implemented"
+        },
+        {
+          "item": "first_half",
+          "status": "implemented"
+        },
+        {
+          "item": "second_half",
+          "status": "implemented"
+        },
+        {
+          "item": "both_halves",
+          "status": "implemented"
+        },
+        {
+          "item": "either_half",
+          "status": "implemented"
+        },
+        {
+          "item": "q1",
+          "status": "implemented"
+        },
+        {
+          "item": "q2",
+          "status": "implemented"
+        },
+        {
+          "item": "q3",
+          "status": "implemented"
+        },
+        {
+          "item": "q4",
+          "status": "implemented"
+        },
+        {
+          "item": "all_quarters",
+          "status": "implemented"
+        }
+      ],
+      "stats": [
+        {
+          "entity": "player",
+          "stat": "behinds",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "clearances",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "disposals",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "fantasy_points",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "free_kicks_against",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "free_kicks_for",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "goals",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "handballs",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "hitouts",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "inside_50s",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "kicks",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "marks",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "supercoach_points",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "tackles",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "behinds",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "free_kicks",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "goals",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "hitouts",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "inside_50s",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "tackles",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "behinds",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "goals",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "total_free_kicks",
+          "status": "implemented"
+        }
+      ],
+      "team_families": [
+        {
+          "detail": "h2h, h2h_3way",
+          "item": "winner",
+          "status": "implemented"
+        },
+        {
+          "detail": "total",
+          "item": "total",
+          "status": "implemented"
+        },
+        {
+          "detail": "line",
+          "item": "handicap",
+          "status": "implemented"
+        },
+        {
+          "detail": "team_total_away, team_total_home",
+          "item": "team_total",
+          "status": "implemented"
+        },
+        {
+          "detail": "exact",
+          "item": "exact",
+          "status": "implemented"
+        },
+        {
+          "detail": "race",
+          "item": "race",
+          "status": "implemented"
+        },
+        {
+          "detail": "margin_bands",
+          "item": "margin_bands",
+          "status": "implemented"
+        },
+        {
+          "detail": "first_half_h2h, first_half_line, first_half_total",
+          "item": "first_half",
+          "status": "implemented"
+        },
+        {
+          "detail": "period_h2h, period_h2h_3way, period_line, period_total",
+          "item": "period",
+          "status": "implemented"
+        },
+        {
+          "detail": "score_type, score_type_team",
+          "item": "particular_score",
+          "status": "implemented"
+        }
+      ]
+    },
+    {
+      "blocked": 0,
+      "implemented": 10,
+      "missing": 1,
+      "player_bet_types": [
+        {
+          "item": "under_over",
+          "status": "implemented"
+        },
+        {
+          "item": "composite",
+          "status": "implemented"
+        },
+        {
+          "item": "anytime_score",
+          "status": "implemented"
+        },
+        {
+          "item": "head_to_head",
+          "status": "implemented"
+        }
+      ],
+      "sport": "baseball",
+      "stat_periods": [
+        {
+          "item": "match",
+          "status": "implemented"
+        },
+        {
+          "item": "innings",
+          "status": "missing"
+        }
+      ],
+      "stats": [
+        {
+          "entity": "player",
+          "stat": "hits",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "home_runs",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "rbis",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "stolen_bases",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "strikeouts_pitcher",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "total_bases",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "errors",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "hits",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "home_runs",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "runs_by_inning_bands",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "extra_innings",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "home_runs",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "pitching_changes",
+          "status": "implemented"
+        }
+      ],
+      "team_families": [
+        {
+          "detail": "h2h, h2h_3way",
+          "item": "winner",
+          "status": "implemented"
+        },
+        {
+          "detail": "total",
+          "item": "total",
+          "status": "implemented"
+        },
+        {
+          "detail": "line",
+          "item": "handicap",
+          "status": "implemented"
+        },
+        {
+          "detail": "team_total_away, team_total_home",
+          "item": "team_total",
+          "status": "implemented"
+        },
+        {
+          "detail": "exact",
+          "item": "exact",
+          "status": "implemented"
+        }
+      ]
+    },
+    {
+      "blocked": 0,
+      "implemented": 29,
+      "missing": 1,
+      "player_bet_types": [
+        {
+          "item": "under_over",
+          "status": "implemented"
+        },
+        {
+          "item": "composite",
+          "status": "implemented"
+        },
+        {
+          "item": "anytime_score",
+          "status": "implemented"
+        },
+        {
+          "item": "first_score",
+          "status": "implemented"
+        },
+        {
+          "item": "last_score",
+          "status": "implemented"
+        },
+        {
+          "item": "particular_score",
+          "status": "implemented"
+        },
+        {
+          "item": "multi_player",
+          "status": "implemented"
+        },
+        {
+          "item": "head_to_head",
+          "status": "implemented"
+        },
+        {
+          "item": "most_x",
+          "status": "implemented"
+        },
+        {
+          "item": "first_score_second_half",
+          "status": "implemented"
+        },
+        {
+          "item": "double_or_triple",
+          "status": "missing"
+        }
+      ],
+      "sport": "basketball",
+      "stat_periods": [
+        {
+          "item": "match",
+          "status": "implemented"
+        },
+        {
+          "item": "first_half",
+          "status": "implemented"
+        },
+        {
+          "item": "second_half",
+          "status": "implemented"
+        },
+        {
+          "item": "both_halves",
+          "status": "implemented"
+        },
+        {
+          "item": "either_half",
+          "status": "implemented"
+        },
+        {
+          "item": "q1",
+          "status": "implemented"
+        },
+        {
+          "item": "q2",
+          "status": "implemented"
+        },
+        {
+          "item": "q3",
+          "status": "implemented"
+        },
+        {
+          "item": "q4",
+          "status": "implemented"
+        },
+        {
+          "item": "all_quarters",
+          "status": "implemented"
+        }
+      ],
+      "stats": [
+        {
+          "entity": "player",
+          "stat": "assists",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "blocks",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "fantasy_points",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "points",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "pra",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "rebounds",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "steals",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "threes_made",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "turnovers",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "assists",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "free_throws_made",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "rebounds",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "threes_made",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "turnovers",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "twos_made",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "lead_changes",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "overtime_periods",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "threes_made",
+          "status": "implemented"
+        }
+      ],
+      "team_families": [
+        {
+          "detail": "h2h, h2h_3way",
+          "item": "winner",
+          "status": "implemented"
+        },
+        {
+          "detail": "total",
+          "item": "total",
+          "status": "implemented"
+        },
+        {
+          "detail": "line",
+          "item": "handicap",
+          "status": "implemented"
+        },
+        {
+          "detail": "team_total_away, team_total_home",
+          "item": "team_total",
+          "status": "implemented"
+        },
+        {
+          "detail": "exact",
+          "item": "exact",
+          "status": "implemented"
+        },
+        {
+          "detail": "race",
+          "item": "race",
+          "status": "implemented"
+        },
+        {
+          "detail": "margin_bands",
+          "item": "margin_bands",
+          "status": "implemented"
+        },
+        {
+          "detail": "first_half_h2h, first_half_line, first_half_total",
+          "item": "first_half",
+          "status": "implemented"
+        },
+        {
+          "detail": "period_h2h, period_h2h_3way, period_line, period_total",
+          "item": "period",
+          "status": "implemented"
+        }
+      ]
+    },
+    {
+      "blocked": 0,
+      "implemented": 8,
+      "missing": 3,
+      "player_bet_types": [
+        {
+          "item": "under_over",
+          "status": "implemented"
+        },
+        {
+          "item": "composite",
+          "status": "implemented"
+        },
+        {
+          "item": "head_to_head",
+          "status": "implemented"
+        },
+        {
+          "item": "most_x",
+          "status": "missing"
+        }
+      ],
+      "sport": "cricket",
+      "stat_periods": [
+        {
+          "item": "match",
+          "status": "implemented"
+        },
+        {
+          "item": "innings",
+          "status": "missing"
+        },
+        {
+          "item": "over_range",
+          "status": "missing"
+        }
+      ],
+      "stats": [
+        {
+          "entity": "player",
+          "stat": "batter_runs",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "boundaries",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "catches",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "sixes",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "wickets_bowler",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "extras",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "fours",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "run_outs",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "sixes",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "wickets_lost_in_powerplay",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "ducks",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "fours",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "sixes",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "wickets",
+          "status": "implemented"
+        }
+      ],
+      "team_families": [
+        {
+          "detail": "h2h, h2h_3way",
+          "item": "winner",
+          "status": "implemented"
+        },
+        {
+          "detail": "total",
+          "item": "total",
+          "status": "implemented"
+        },
+        {
+          "detail": "line",
+          "item": "handicap",
+          "status": "implemented"
+        },
+        {
+          "detail": "team_total_away, team_total_home",
+          "item": "team_total",
+          "status": "implemented"
+        }
+      ]
+    },
+    {
+      "blocked": 1,
+      "implemented": 4,
+      "missing": 1,
+      "player_bet_types": [
+        {
+          "item": "under_over",
+          "status": "blocked"
+        },
+        {
+          "item": "head_to_head",
+          "status": "missing"
+        }
+      ],
+      "sport": "darts",
+      "stat_periods": [],
+      "stats": [
+        {
+          "entity": "player",
+          "stat": "checkouts_100_plus",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "highest_checkout_bands",
+          "status": "blocked"
+        },
+        {
+          "entity": "player",
+          "stat": "legs_won",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "one_eighties",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "legs",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "nine_darters",
+          "status": "blocked"
+        },
+        {
+          "entity": "match",
+          "stat": "one_eighties",
+          "status": "implemented"
+        }
+      ],
+      "team_families": [
+        {
+          "detail": "h2h",
+          "item": "winner",
+          "status": "implemented"
+        },
+        {
+          "detail": "total_units",
+          "item": "total",
+          "status": "implemented"
+        },
+        {
+          "detail": "unit_handicap",
+          "item": "handicap",
+          "status": "implemented"
+        },
+        {
+          "detail": "correct_score",
+          "item": "correct_score",
+          "status": "implemented"
+        }
+      ]
+    },
+    {
+      "blocked": 0,
+      "implemented": 3,
+      "missing": 2,
+      "player_bet_types": [
+        {
+          "item": "under_over",
+          "status": "implemented"
+        },
+        {
+          "item": "head_to_head",
+          "status": "missing"
+        },
+        {
+          "item": "most_x",
+          "status": "missing"
+        }
+      ],
+      "sport": "golf",
+      "stat_periods": [],
+      "stats": [
+        {
+          "entity": "player",
+          "stat": "birdies_round",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "bogeys_round",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "eagles_tournament",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "greens_in_regulation",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "hole_in_ones_event",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "playoff_holes",
+          "status": "implemented"
+        }
+      ],
+      "team_families": [
+        {
+          "detail": "win",
+          "item": "winner",
+          "status": "implemented"
+        },
+        {
+          "detail": "matchup, top_n",
+          "item": "field",
+          "status": "implemented"
+        }
+      ]
+    },
+    {
+      "blocked": 2,
+      "implemented": 17,
+      "missing": 0,
+      "player_bet_types": [
+        {
+          "item": "under_over",
+          "status": "blocked"
+        },
+        {
+          "item": "composite",
+          "status": "blocked"
+        },
+        {
+          "item": "anytime_score",
+          "status": "implemented"
+        },
+        {
+          "item": "first_score",
+          "status": "implemented"
+        },
+        {
+          "item": "last_score",
+          "status": "implemented"
+        },
+        {
+          "item": "head_to_head",
+          "status": "implemented"
+        }
+      ],
+      "sport": "ice_hockey",
+      "stat_periods": [
+        {
+          "item": "match",
+          "status": "implemented"
+        },
+        {
+          "item": "p1",
+          "status": "implemented"
+        },
+        {
+          "item": "p2",
+          "status": "implemented"
+        },
+        {
+          "item": "p3",
+          "status": "implemented"
+        }
+      ],
+      "stats": [
+        {
+          "entity": "player",
+          "stat": "assists",
+          "status": "blocked"
+        },
+        {
+          "entity": "player",
+          "stat": "blocked_shots",
+          "status": "blocked"
+        },
+        {
+          "entity": "player",
+          "stat": "goals",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "hits",
+          "status": "blocked"
+        },
+        {
+          "entity": "player",
+          "stat": "points",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "saves_goalie",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "shots_on_goal",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "goals",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "penalty_minutes",
+          "status": "blocked"
+        },
+        {
+          "entity": "team",
+          "stat": "power_plays",
+          "status": "blocked"
+        },
+        {
+          "entity": "team",
+          "stat": "shots_on_goal",
+          "status": "blocked"
+        },
+        {
+          "entity": "match",
+          "stat": "fights",
+          "status": "blocked"
+        },
+        {
+          "entity": "match",
+          "stat": "goals",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "penalty_minutes",
+          "status": "blocked"
+        }
+      ],
+      "team_families": [
+        {
+          "detail": "h2h, h2h_3way",
+          "item": "winner",
+          "status": "implemented"
+        },
+        {
+          "detail": "total",
+          "item": "total",
+          "status": "implemented"
+        },
+        {
+          "detail": "line",
+          "item": "handicap",
+          "status": "implemented"
+        },
+        {
+          "detail": "team_total_away, team_total_home",
+          "item": "team_total",
+          "status": "implemented"
+        },
+        {
+          "detail": "exact",
+          "item": "exact",
+          "status": "implemented"
+        },
+        {
+          "detail": "btts",
+          "item": "both_team",
+          "status": "implemented"
+        },
+        {
+          "detail": "first_half_h2h, first_half_line, first_half_total",
+          "item": "first_half",
+          "status": "implemented"
+        },
+        {
+          "detail": "period_h2h, period_h2h_3way, period_line, period_total",
+          "item": "period",
+          "status": "implemented"
+        },
+        {
+          "detail": "period_scoreless, period_scoreless_away, period_scoreless_home",
+          "item": "scoreless",
+          "status": "implemented"
+        }
+      ]
+    },
+    {
+      "blocked": 0,
+      "implemented": 4,
+      "missing": 0,
+      "player_bet_types": [
+        {
+          "item": "under_over",
+          "status": "implemented"
+        }
+      ],
+      "sport": "mma",
+      "stat_periods": [],
+      "stats": [
+        {
+          "entity": "player",
+          "stat": "knockdowns",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "significant_strikes",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "submission_attempts",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "takedowns",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "knockdowns",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "total_rounds",
+          "status": "implemented"
+        }
+      ],
+      "team_families": [
+        {
+          "detail": "h2h",
+          "item": "winner",
+          "status": "implemented"
+        },
+        {
+          "detail": "total_rounds",
+          "item": "total",
+          "status": "implemented"
+        },
+        {
+          "detail": "goes_distance",
+          "item": "distance",
+          "status": "implemented"
+        }
+      ]
+    },
+    {
+      "blocked": 0,
+      "implemented": 31,
+      "missing": 0,
+      "player_bet_types": [
+        {
+          "item": "under_over",
+          "status": "implemented"
+        },
+        {
+          "item": "composite",
+          "status": "implemented"
+        },
+        {
+          "item": "anytime_score",
+          "status": "implemented"
+        },
+        {
+          "item": "first_score",
+          "status": "implemented"
+        },
+        {
+          "item": "last_score",
+          "status": "implemented"
+        },
+        {
+          "item": "one_of_first_x",
+          "status": "implemented"
+        },
+        {
+          "item": "particular_score",
+          "status": "implemented"
+        },
+        {
+          "item": "multi_player",
+          "status": "implemented"
+        },
+        {
+          "item": "head_to_head",
+          "status": "implemented"
+        },
+        {
+          "item": "most_x",
+          "status": "implemented"
+        },
+        {
+          "item": "first_score_second_half",
+          "status": "implemented"
+        }
+      ],
+      "sport": "nfl",
+      "stat_periods": [
+        {
+          "item": "match",
+          "status": "implemented"
+        },
+        {
+          "item": "first_half",
+          "status": "implemented"
+        },
+        {
+          "item": "second_half",
+          "status": "implemented"
+        },
+        {
+          "item": "both_halves",
+          "status": "implemented"
+        },
+        {
+          "item": "either_half",
+          "status": "implemented"
+        },
+        {
+          "item": "q1",
+          "status": "implemented"
+        },
+        {
+          "item": "q2",
+          "status": "implemented"
+        },
+        {
+          "item": "q3",
+          "status": "implemented"
+        },
+        {
+          "item": "q4",
+          "status": "implemented"
+        },
+        {
+          "item": "all_quarters",
+          "status": "implemented"
+        }
+      ],
+      "stats": [
+        {
+          "entity": "player",
+          "stat": "completions",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "passing_yards",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "receiving_yards",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "receptions",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "rushing_yards",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "sacks_taken",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "touchdowns",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "field_goals",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "first_downs",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "punts",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "sacks",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "touchdowns",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "turnovers",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "field_goals",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "punts",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "touchdowns",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "turnovers",
+          "status": "implemented"
+        }
+      ],
+      "team_families": [
+        {
+          "detail": "h2h, h2h_3way",
+          "item": "winner",
+          "status": "implemented"
+        },
+        {
+          "detail": "total",
+          "item": "total",
+          "status": "implemented"
+        },
+        {
+          "detail": "line",
+          "item": "handicap",
+          "status": "implemented"
+        },
+        {
+          "detail": "team_total_away, team_total_home",
+          "item": "team_total",
+          "status": "implemented"
+        },
+        {
+          "detail": "exact",
+          "item": "exact",
+          "status": "implemented"
+        },
+        {
+          "detail": "race",
+          "item": "race",
+          "status": "implemented"
+        },
+        {
+          "detail": "margin_bands",
+          "item": "margin_bands",
+          "status": "implemented"
+        },
+        {
+          "detail": "first_half_h2h, first_half_line, first_half_total",
+          "item": "first_half",
+          "status": "implemented"
+        },
+        {
+          "detail": "period_h2h, period_h2h_3way, period_line, period_total",
+          "item": "period",
+          "status": "implemented"
+        },
+        {
+          "detail": "period_scoreless, period_scoreless_away, period_scoreless_home",
+          "item": "scoreless",
+          "status": "implemented"
+        }
+      ]
+    },
+    {
+      "blocked": 0,
+      "implemented": 3,
+      "missing": 0,
+      "player_bet_types": [],
+      "sport": "racing",
+      "stat_periods": [],
+      "stats": [
+        {
+          "entity": "player",
+          "stat": "jockey_wins_meeting",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "trainer_wins_meeting",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "favourites_winning_meeting",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "photo_finishes",
+          "status": "implemented"
+        }
+      ],
+      "team_families": [
+        {
+          "detail": "h2h, win",
+          "item": "winner",
+          "status": "implemented"
+        },
+        {
+          "detail": "place",
+          "item": "place",
+          "status": "implemented"
+        },
+        {
+          "detail": "exacta, first_four, quinella, trifecta",
+          "item": "exotics",
+          "status": "implemented"
+        }
+      ]
+    },
+    {
+      "blocked": 0,
+      "implemented": 27,
+      "missing": 0,
+      "player_bet_types": [
+        {
+          "item": "under_over",
+          "status": "implemented"
+        },
+        {
+          "item": "composite",
+          "status": "implemented"
+        },
+        {
+          "item": "anytime_score",
+          "status": "implemented"
+        },
+        {
+          "item": "first_score",
+          "status": "implemented"
+        },
+        {
+          "item": "last_score",
+          "status": "implemented"
+        },
+        {
+          "item": "one_of_first_x",
+          "status": "implemented"
+        },
+        {
+          "item": "particular_score",
+          "status": "implemented"
+        },
+        {
+          "item": "multi_player",
+          "status": "implemented"
+        },
+        {
+          "item": "multi_player_or",
+          "status": "implemented"
+        },
+        {
+          "item": "head_to_head",
+          "status": "implemented"
+        },
+        {
+          "item": "most_x",
+          "status": "implemented"
+        }
+      ],
+      "sport": "rugby_league",
+      "stat_periods": [
+        {
+          "item": "match",
+          "status": "implemented"
+        },
+        {
+          "item": "first_half",
+          "status": "implemented"
+        },
+        {
+          "item": "second_half",
+          "status": "implemented"
+        },
+        {
+          "item": "both_halves",
+          "status": "implemented"
+        },
+        {
+          "item": "either_half",
+          "status": "implemented"
+        }
+      ],
+      "stats": [
+        {
+          "entity": "player",
+          "stat": "errors",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "fantasy_points",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "hit_ups",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "kick_metres",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "line_breaks",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "offloads",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "performance_points",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "run_metres",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "runs",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "supercoach_points",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "tackle_busts",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "tackles",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "tries",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "try_assists",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "completed_sets",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "errors",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "goals",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "sin_bins",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "tries",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "sin_bins",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "tries",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "video_referrals",
+          "status": "implemented"
+        }
+      ],
+      "team_families": [
+        {
+          "detail": "h2h, h2h_3way",
+          "item": "winner",
+          "status": "implemented"
+        },
+        {
+          "detail": "total",
+          "item": "total",
+          "status": "implemented"
+        },
+        {
+          "detail": "line",
+          "item": "handicap",
+          "status": "implemented"
+        },
+        {
+          "detail": "team_total_away, team_total_home",
+          "item": "team_total",
+          "status": "implemented"
+        },
+        {
+          "detail": "exact",
+          "item": "exact",
+          "status": "implemented"
+        },
+        {
+          "detail": "race",
+          "item": "race",
+          "status": "implemented"
+        },
+        {
+          "detail": "margin_bands",
+          "item": "margin_bands",
+          "status": "implemented"
+        },
+        {
+          "detail": "first_half_h2h, first_half_line, first_half_total",
+          "item": "first_half",
+          "status": "implemented"
+        },
+        {
+          "detail": "period_h2h, period_h2h_3way, period_line, period_total",
+          "item": "period",
+          "status": "implemented"
+        },
+        {
+          "detail": "score_type, score_type_team",
+          "item": "particular_score",
+          "status": "implemented"
+        },
+        {
+          "detail": "period_scoreless, period_scoreless_away, period_scoreless_home",
+          "item": "scoreless",
+          "status": "implemented"
+        }
+      ]
+    },
+    {
+      "blocked": 2,
+      "implemented": 20,
+      "missing": 0,
+      "player_bet_types": [
+        {
+          "item": "under_over",
+          "status": "blocked"
+        },
+        {
+          "item": "composite",
+          "status": "blocked"
+        },
+        {
+          "item": "anytime_score",
+          "status": "implemented"
+        },
+        {
+          "item": "first_score",
+          "status": "implemented"
+        },
+        {
+          "item": "last_score",
+          "status": "implemented"
+        },
+        {
+          "item": "one_of_first_x",
+          "status": "implemented"
+        },
+        {
+          "item": "particular_score",
+          "status": "implemented"
+        },
+        {
+          "item": "multi_player",
+          "status": "implemented"
+        },
+        {
+          "item": "head_to_head",
+          "status": "implemented"
+        }
+      ],
+      "sport": "rugby_union",
+      "stat_periods": [
+        {
+          "item": "match",
+          "status": "implemented"
+        },
+        {
+          "item": "first_half",
+          "status": "implemented"
+        },
+        {
+          "item": "second_half",
+          "status": "implemented"
+        },
+        {
+          "item": "both_halves",
+          "status": "implemented"
+        },
+        {
+          "item": "either_half",
+          "status": "implemented"
+        }
+      ],
+      "stats": [
+        {
+          "entity": "player",
+          "stat": "carries",
+          "status": "blocked"
+        },
+        {
+          "entity": "player",
+          "stat": "line_breaks",
+          "status": "blocked"
+        },
+        {
+          "entity": "player",
+          "stat": "lineouts_won",
+          "status": "blocked"
+        },
+        {
+          "entity": "player",
+          "stat": "run_metres",
+          "status": "blocked"
+        },
+        {
+          "entity": "player",
+          "stat": "tackles",
+          "status": "blocked"
+        },
+        {
+          "entity": "player",
+          "stat": "tries",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "try_assists",
+          "status": "blocked"
+        },
+        {
+          "entity": "team",
+          "stat": "lineouts",
+          "status": "blocked"
+        },
+        {
+          "entity": "team",
+          "stat": "penalty_goals",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "scrums_won",
+          "status": "blocked"
+        },
+        {
+          "entity": "team",
+          "stat": "tries",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "yellow_cards",
+          "status": "blocked"
+        },
+        {
+          "entity": "match",
+          "stat": "cards",
+          "status": "blocked"
+        },
+        {
+          "entity": "match",
+          "stat": "penalty_goals",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "tries",
+          "status": "implemented"
+        }
+      ],
+      "team_families": [
+        {
+          "detail": "h2h, h2h_3way",
+          "item": "winner",
+          "status": "implemented"
+        },
+        {
+          "detail": "total",
+          "item": "total",
+          "status": "implemented"
+        },
+        {
+          "detail": "line",
+          "item": "handicap",
+          "status": "implemented"
+        },
+        {
+          "detail": "team_total_away, team_total_home",
+          "item": "team_total",
+          "status": "implemented"
+        },
+        {
+          "detail": "exact",
+          "item": "exact",
+          "status": "implemented"
+        },
+        {
+          "detail": "margin_bands",
+          "item": "margin_bands",
+          "status": "implemented"
+        },
+        {
+          "detail": "first_half_h2h, first_half_line, first_half_total",
+          "item": "first_half",
+          "status": "implemented"
+        },
+        {
+          "detail": "period_h2h, period_h2h_3way, period_line, period_total",
+          "item": "period",
+          "status": "implemented"
+        }
+      ]
+    },
+    {
+      "blocked": 1,
+      "implemented": 4,
+      "missing": 1,
+      "player_bet_types": [
+        {
+          "item": "under_over",
+          "status": "blocked"
+        },
+        {
+          "item": "head_to_head",
+          "status": "missing"
+        }
+      ],
+      "sport": "snooker",
+      "stat_periods": [],
+      "stats": [
+        {
+          "entity": "player",
+          "stat": "breaks_50_plus",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "centuries",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "frames_won",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "highest_break_bands",
+          "status": "blocked"
+        },
+        {
+          "entity": "match",
+          "stat": "centuries",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "frames",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "rerack_count",
+          "status": "blocked"
+        }
+      ],
+      "team_families": [
+        {
+          "detail": "h2h",
+          "item": "winner",
+          "status": "implemented"
+        },
+        {
+          "detail": "total_units",
+          "item": "total",
+          "status": "implemented"
+        },
+        {
+          "detail": "unit_handicap",
+          "item": "handicap",
+          "status": "implemented"
+        },
+        {
+          "detail": "correct_score",
+          "item": "correct_score",
+          "status": "implemented"
+        }
+      ]
+    },
+    {
+      "blocked": 0,
+      "implemented": 25,
+      "missing": 0,
+      "player_bet_types": [
+        {
+          "item": "under_over",
+          "status": "implemented"
+        },
+        {
+          "item": "composite",
+          "status": "implemented"
+        },
+        {
+          "item": "anytime_score",
+          "status": "implemented"
+        },
+        {
+          "item": "first_score",
+          "status": "implemented"
+        },
+        {
+          "item": "last_score",
+          "status": "implemented"
+        },
+        {
+          "item": "particular_score",
+          "status": "implemented"
+        },
+        {
+          "item": "multi_player",
+          "status": "implemented"
+        },
+        {
+          "item": "head_to_head",
+          "status": "implemented"
+        },
+        {
+          "item": "most_x",
+          "status": "implemented"
+        }
+      ],
+      "sport": "soccer",
+      "stat_periods": [
+        {
+          "item": "match",
+          "status": "implemented"
+        },
+        {
+          "item": "first_half",
+          "status": "implemented"
+        },
+        {
+          "item": "second_half",
+          "status": "implemented"
+        },
+        {
+          "item": "both_halves",
+          "status": "implemented"
+        },
+        {
+          "item": "either_half",
+          "status": "implemented"
+        }
+      ],
+      "stats": [
+        {
+          "entity": "player",
+          "stat": "assists",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "cards",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "crosses",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "fouls_committed",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "goals",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "key_passes",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "passes",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "saves_gk",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "shots",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "shots_on_target",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "tackles",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "cards",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "corners",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "crosses",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "fouls",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "goals",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "offsides",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "passes",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "shots",
+          "status": "implemented"
+        },
+        {
+          "entity": "team",
+          "stat": "shots_on_target",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "booking_points",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "cards",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "corners",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "goals",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "penalties_awarded",
+          "status": "implemented"
+        }
+      ],
+      "team_families": [
+        {
+          "detail": "h2h, h2h_3way",
+          "item": "winner",
+          "status": "implemented"
+        },
+        {
+          "detail": "total",
+          "item": "total",
+          "status": "implemented"
+        },
+        {
+          "detail": "line",
+          "item": "handicap",
+          "status": "implemented"
+        },
+        {
+          "detail": "team_total_away, team_total_home",
+          "item": "team_total",
+          "status": "implemented"
+        },
+        {
+          "detail": "exact",
+          "item": "exact",
+          "status": "implemented"
+        },
+        {
+          "detail": "btts",
+          "item": "both_team",
+          "status": "implemented"
+        },
+        {
+          "detail": "correct_score",
+          "item": "correct_score",
+          "status": "implemented"
+        },
+        {
+          "detail": "double_chance",
+          "item": "double_chance",
+          "status": "implemented"
+        },
+        {
+          "detail": "first_half_h2h, first_half_line, first_half_total",
+          "item": "first_half",
+          "status": "implemented"
+        },
+        {
+          "detail": "period_h2h, period_h2h_3way, period_line, period_total",
+          "item": "period",
+          "status": "implemented"
+        },
+        {
+          "detail": "period_scoreless, period_scoreless_away, period_scoreless_home",
+          "item": "scoreless",
+          "status": "implemented"
+        }
+      ]
+    },
+    {
+      "blocked": 0,
+      "implemented": 7,
+      "missing": 2,
+      "player_bet_types": [
+        {
+          "item": "under_over",
+          "status": "implemented"
+        },
+        {
+          "item": "head_to_head",
+          "status": "missing"
+        }
+      ],
+      "sport": "tennis",
+      "stat_periods": [
+        {
+          "item": "match",
+          "status": "implemented"
+        },
+        {
+          "item": "set",
+          "status": "missing"
+        }
+      ],
+      "stats": [
+        {
+          "entity": "player",
+          "stat": "aces",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "breaks_of_serve",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "double_faults",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "games_won",
+          "status": "implemented"
+        },
+        {
+          "entity": "player",
+          "stat": "sets_won",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "aces",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "double_faults",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "tiebreaks",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "total_games",
+          "status": "implemented"
+        },
+        {
+          "entity": "match",
+          "stat": "total_sets",
+          "status": "implemented"
+        }
+      ],
+      "team_families": [
+        {
+          "detail": "h2h",
+          "item": "winner",
+          "status": "implemented"
+        },
+        {
+          "detail": "total_games, total_sets",
+          "item": "total",
+          "status": "implemented"
+        },
+        {
+          "detail": "game_handicap, set_handicap",
+          "item": "handicap",
+          "status": "implemented"
+        },
+        {
+          "detail": "correct_score_sets",
+          "item": "correct_score",
+          "status": "implemented"
+        },
+        {
+          "detail": "first_set_winner",
+          "item": "first_unit",
+          "status": "implemented"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "blocked": 6,
+    "implemented": 224,
+    "missing": 11
+  },
+  "vocabulary_version": "1.0"
+}

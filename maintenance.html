@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Back shortly — sportsdata</title>
+<meta name="description" content="sportsdata is down for scheduled maintenance and will be back shortly.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#05080f">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<style>
+  :root{--bg:#05080f;--ink:#eef2ff;--dim:#8e97b3;--faint:#62748f;--acc1:#6e8bff;--acc2:#3dd6f5;
+    --acc3:#7cf5c8;--warn:#fbbf24;--card:rgba(255,255,255,.035);--border:rgba(255,255,255,.1);
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);min-height:100vh;
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
+  .grid-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,black 35%,transparent 75%);
+    -webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,black 35%,transparent 75%)}
+  .orb{position:fixed;border-radius:50%;filter:blur(120px);opacity:.3;z-index:-2}
+  .orb.a{width:520px;height:520px;background:#2741b8;top:-180px;left:-120px}
+  .orb.b{width:420px;height:420px;background:#0c5a6e;bottom:-160px;right:-140px}
+  .wrap{flex:1;max-width:620px;margin:0 auto;padding:40px 24px 64px;display:flex;
+    flex-direction:column;justify-content:center;text-align:center}
+  .wordmark{font-weight:800;font-size:19px;letter-spacing:-.3px;text-decoration:none;color:var(--ink);
+    display:inline-block;margin-bottom:44px}
+  .wordmark span{background:linear-gradient(90deg,var(--acc1),var(--acc2));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:13px;color:var(--dim);
+    border:1px solid var(--border);background:var(--card);border-radius:999px;
+    padding:7px 16px;margin-bottom:26px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--warn);animation:pulse 2.2s ease infinite}
+  @keyframes pulse{50%{opacity:.35;transform:scale(.85)}}
+  @media (prefers-reduced-motion:reduce){.dot{animation:none}}
+  h1{font-size:clamp(30px,6.4vw,46px);line-height:1.1;letter-spacing:-1.5px;font-weight:800}
+  h1 .grad{background:linear-gradient(90deg,var(--acc1),var(--acc2) 50%,var(--acc3));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--dim);margin:20px auto 0;max-width:46ch}
+  .box{border:1px solid var(--border);background:var(--card);border-radius:14px;
+    padding:20px 22px;margin-top:32px;text-align:left}
+  .box h2{font-size:13px;text-transform:uppercase;letter-spacing:1.3px;color:var(--faint);
+    font-weight:600;margin-bottom:8px}
+  .box p{font-size:14px;color:var(--dim)}
+  .box p a{color:var(--acc2)}
+  .links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:28px}
+  .links a{font-size:13.5px;color:var(--dim);text-decoration:none;border:1px solid var(--border);
+    background:var(--card);border-radius:999px;padding:8px 16px}
+  .links a:hover{color:var(--ink);border-color:rgba(255,255,255,.25)}
+  footer{border-top:1px solid var(--border);padding:20px 24px;text-align:center;
+    color:var(--faint);font-size:12.5px}
+  footer a{color:var(--dim);text-decoration:none}
+  :focus-visible{outline:2px solid var(--acc2);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+<div class="orb a"></div><div class="orb b"></div><div class="grid-bg"></div>
+
+<div class="wrap">
+  <div>
+    <a class="wordmark" href="/">sports<span>data</span></a>
+    <div class="eyebrow"><span class="dot"></span> Scheduled maintenance</div>
+    <h1>Back in a <span class="grad">few minutes.</span></h1>
+    <p class="sub">We're pushing an update to the data plane. Nothing is lost, and no action is
+    needed on your end — the site will come back on its own.</p>
+
+    <div class="box">
+      <h2>Meanwhile</h2>
+      <p>The MCP server runs locally, so anything already installed keeps working — it talks to
+      the upstream providers directly, not through this site. Source and releases stay available
+      on <a href="https://github.com/DanielTomaro13/sportsdata-mcp">GitHub</a>.</p>
+    </div>
+
+    <div class="links">
+      <a href="https://github.com/DanielTomaro13/sportsdata-mcp">GitHub</a>
+      <a href="mailto:danieltomaro@icloud.com">Contact</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 sportsdata · Free &amp; open source (MIT) ·
+  <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> · <a href="https://ko-fi.com/danieltomaro" target="_blank" rel="noopener">Support on Ko-fi</a>
+</footer>
+</body>
+</html>

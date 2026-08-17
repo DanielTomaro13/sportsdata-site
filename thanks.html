@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download sportsdata — install in three steps</title>
+<meta name="description" content="Grab the latest sportsdata release and wire it into Claude Desktop, Cursor or any other MCP client in three steps.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#05080f">
+<link rel="canonical" href="https://sportsdata-ai.com/thanks.html">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  :root{--bg:#05080f;--ink:#eef2ff;--dim:#8e97b3;--faint:#62748f;--acc1:#6e8bff;--acc2:#3dd6f5;
+    --acc3:#7cf5c8;--ok:#4ade80;--warn:#fbbf24;--card:rgba(255,255,255,.035);
+    --border:rgba(255,255,255,.1);--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);min-height:100vh;
+    font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
+  .grid-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,black 35%,transparent 75%);
+    -webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,black 35%,transparent 75%)}
+  .orb{position:fixed;border-radius:50%;filter:blur(120px);opacity:.28;z-index:-2}
+  .orb.a{width:520px;height:520px;background:#2741b8;top:-200px;left:-140px}
+  main{flex:1;width:100%;max-width:720px;margin:0 auto;padding:28px 24px 72px}
+  nav.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:40px}
+  .wordmark{font-weight:800;font-size:19px;letter-spacing:-.3px;text-decoration:none;color:var(--ink)}
+  .wordmark span{background:linear-gradient(90deg,var(--acc1),var(--acc2));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  nav.top .home{color:var(--dim);text-decoration:none;font-size:14px}
+  nav.top .home:hover{color:var(--ink)}
+  .tick{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:27px;
+    background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.35);color:var(--ok);
+    margin-bottom:22px}
+  h1{font-size:clamp(28px,5vw,40px);line-height:1.12;letter-spacing:-1.2px;font-weight:800}
+  h1 .grad{background:linear-gradient(90deg,var(--acc1),var(--acc2) 55%,var(--acc3));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{color:var(--dim);margin-top:16px;max-width:56ch}
+  .lede a{color:var(--acc2)}
+  .manual{font-size:13.5px;color:var(--faint);margin-top:10px}
+  .manual a{color:var(--acc2)}
+  h2{font-size:19px;margin:46px 0 6px;letter-spacing:-.3px}
+  .steps{counter-reset:s;list-style:none;margin-top:16px}
+  .steps li{counter-increment:s;position:relative;padding:0 0 22px 44px;
+    border-left:1px solid var(--border);margin-left:13px}
+  .steps li:last-child{border-left-color:transparent;padding-bottom:0}
+  .steps li::before{content:counter(s);position:absolute;left:-13px;top:0;width:26px;height:26px;
+    border-radius:50%;display:grid;place-items:center;font-size:12.5px;font-weight:700;
+    background:#0d1524;border:1px solid var(--border);color:var(--acc2)}
+  .steps h3{font-size:15.5px;margin-bottom:4px}
+  .steps p{font-size:14px;color:var(--dim);line-height:1.6}
+  code,pre{font-family:var(--mono)}
+  code{font-size:13px;background:rgba(255,255,255,.06);border:1px solid var(--border);
+    border-radius:6px;padding:2px 7px}
+  pre{font-size:12.5px;background:rgba(0,0,0,.35);border:1px solid var(--border);border-radius:10px;
+    padding:14px 16px;margin-top:10px;overflow-x:auto;color:#cfd7ee;line-height:1.6}
+  .warn{border:1px solid rgba(251,191,36,.32);background:rgba(251,191,36,.06);border-radius:10px;
+    padding:13px 17px;font-size:13.5px;color:#e8d9ae;margin-top:14px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .cta a{text-decoration:none;font-size:14.5px;font-weight:600;padding:12px 22px;border-radius:11px}
+  .cta a.primary{color:#06101f;background:linear-gradient(90deg,var(--acc2),var(--acc3))}
+  .cta a.ghost{color:var(--ink);border:1px solid var(--border);background:var(--card)}
+  footer{border-top:1px solid var(--border);padding:20px 24px;text-align:center;
+    color:var(--faint);font-size:12.5px}
+  footer a{color:var(--dim);text-decoration:none}
+  :focus-visible{outline:2px solid var(--acc2);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+<div class="orb a"></div><div class="grid-bg"></div>
+<main>
+  <nav class="top" aria-label="Primary">
+    <a class="wordmark" href="/">sports<span>data</span></a>
+    <a class="home" href="/">← Back to sportsdata</a>
+  </nav>
+
+  <div class="tick" aria-hidden="true">✓</div>
+  <h1>Nice — <span class="grad">let's get you set up.</span></h1>
+  <p class="lede">sportsdata is free, MIT licensed, and there's nothing to activate: no account,
+  no licence key, no trial. Grab the build for your platform, then three steps and your AI client
+  is talking to live sports data.</p>
+
+  <div class="cta" style="margin-top:26px">
+    <a class="primary" id="dl" href="https://api.sportsdata-ai.com/download">Get the latest release ↗</a>
+    <a class="ghost" href="https://github.com/DanielTomaro13/sportsdata-agents/releases/latest">Agent workbench app ↗</a>
+  </div>
+  <p class="manual">Opens the GitHub releases page — pick the asset matching your OS.</p>
+
+  <h2>Install it</h2>
+  <ol class="steps">
+    <li>
+      <h3>Unzip and run setup</h3>
+      <p>Open a terminal where you unzipped it, then run setup once. It writes the MCP config
+      for the clients it finds on your machine.</p>
+      <pre>./sportsdata-mcp setup</pre>
+      <div class="warn"><b>macOS:</b> the build is unsigned for now, so double-clicking will be
+      blocked. Right-click the app → <b>Open</b> → <b>Open</b>, once, and macOS remembers it.</div>
+    </li>
+    <li>
+      <h3>Restart your AI client</h3>
+      <p>Quit and reopen Claude Desktop, Cursor, or whichever MCP client you use — it reads the
+      config at startup. You should see the sportsdata tools appear in the tool list.</p>
+    </li>
+    <li>
+      <h3>Ask it something real</h3>
+      <p>A good first test, because it hits several providers at once:</p>
+      <pre>What's on in the AFL this round, and which book has
+the best price on each favourite?</pre>
+    </li>
+  </ol>
+
+  <h2>Prefer no download?</h2>
+  <p class="lede">The server is on PyPI, so one line wires it into any MCP client — no app, no
+  Python project, nothing to unzip.</p>
+  <pre>uvx sportsdata-mcp serve</pre>
+
+  <h2>If something breaks</h2>
+  <p class="lede">Open an issue on
+  <a href="https://github.com/DanielTomaro13/sportsdata-mcp/issues">GitHub</a> or email
+  <a href="mailto:danieltomaro@icloud.com">danieltomaro@icloud.com</a>. Some bookmaker feeds are
+  geo-restricted outside their home region — if a provider returns nothing, that's usually why.</p>
+
+  <h2>Free, and staying that way</h2>
+  <p class="lede">sportsdata is built and maintained by one person, and every feature is free for
+  everyone whether you chip in or not — nothing is gated. If it saves you time, a coffee helps
+  keep the feeds maintained.</p>
+
+  <div class="cta">
+    <a class="primary" href="https://ko-fi.com/danieltomaro" target="_blank" rel="noopener">Support on Ko-fi ☕</a>
+    <a class="ghost" href="/#feeds">Browse every tool</a>
+    <a class="ghost" href="/engines.html">Pricing engines</a>
+    <a class="ghost" href="https://github.com/DanielTomaro13/sportsdata-mcp">Source on GitHub</a>
+  </div>
+</main>
+
+<footer>
+  © 2026 sportsdata · Free &amp; open source (MIT) · Informational only, not betting or financial advice · 18+ ·
+  <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> · <a href="/sitemap.html">Sitemap</a> · <a href="https://ko-fi.com/danieltomaro" target="_blank" rel="noopener">Support on Ko-fi</a>
+</footer>
+
+</body>
+</html>

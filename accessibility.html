@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility Statement — sportsdata</title>
+<meta name="description" content="How sportsdata approaches accessibility: our WCAG 2.2 AA target, what already works, the gaps we know about, and how to report a barrier.">
+<link rel="canonical" href="https://sportsdata-ai.com/accessibility.html">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#05080f">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="sportsdata">
+<meta property="og:url" content="https://sportsdata-ai.com/accessibility.html">
+<meta property="og:title" content="Accessibility Statement — sportsdata">
+<meta property="og:description" content="Our WCAG 2.2 AA target, what already works, the gaps we know about, and how to report a barrier.">
+<meta property="og:image" content="https://sportsdata-ai.com/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sportsdata-ai.com/assets/og-cover.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sportsdata-ai.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Accessibility Statement", "item": "https://sportsdata-ai.com/accessibility.html" }
+  ]
+}
+</script>
+<style>
+  :root{--bg:#05080f;--ink:#eef2ff;--dim:#8e97b3;--faint:#62748f;--acc1:#6e8bff;--acc2:#3dd6f5;
+    --border:rgba(255,255,255,.1)}
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);
+    font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
+    margin:0;padding:40px 20px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto}
+  .crumbs{font-size:13px;color:var(--faint);margin-bottom:22px}
+  .crumbs a{color:var(--dim);text-decoration:none}
+  .crumbs a:hover{color:var(--ink)}
+  .wordmark{font-weight:800;font-size:18px;letter-spacing:-.3px;text-decoration:none;color:var(--ink)}
+  .wordmark span{background:linear-gradient(90deg,var(--acc1),var(--acc2));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  a{color:var(--acc2)}
+  h1{font-size:28px;margin:18px 0 4px}
+  h2{font-size:18px;margin:32px 0 8px}
+  p,li{color:#cfd7ee}
+  ul{padding-left:20px}
+  li{margin:6px 0}
+  .dim{color:var(--dim);font-size:14px}
+  .note{border:1px solid rgba(61,214,245,.3);background:rgba(61,214,245,.06);border-radius:10px;
+    padding:14px 18px;font-size:14px;margin:20px 0 26px;color:#cfd7ee}
+  footer{margin-top:48px;border-top:1px solid var(--border);padding-top:18px;color:var(--dim);font-size:13px}
+  footer a{color:var(--dim);text-decoration:none}
+  :focus-visible{outline:2px solid var(--acc2);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumbs"><a href="/">Home</a> › <span aria-current="page">Accessibility</span></div>
+  <a class="wordmark" href="/">sports<span>data</span></a>
+  <h1>Accessibility Statement</h1>
+  <p class="dim">Last updated: 17 August 2026</p>
+
+  <p>sportsdata is built to be usable by as many people as possible, including people who
+  browse with a keyboard, a screen reader, magnification, or reduced motion enabled.</p>
+
+  <div class="note">Target: <b>WCAG 2.2 Level AA</b>. This site is <b>partially conformant</b> —
+  the marketing and documentation pages meet the target as far as we have been able to test;
+  the two live board terminals have known gaps, listed below.</div>
+
+  <h2>What already works</h2>
+  <ul>
+    <li><b>Keyboard</b> — every link, button, search field and expandable section can be reached
+      and operated with the keyboard, and focus is always visible.</li>
+    <li><b>Skip link</b> — a "skip to content" link is the first thing a keyboard user reaches
+      on the home page.</li>
+    <li><b>Reduced motion</b> — the animated background, counters, marquees and the recorded demo
+      all respect <code>prefers-reduced-motion</code> and stop animating when you ask them to.</li>
+    <li><b>Structure</b> — pages use real headings, landmarks and lists, so screen-reader users
+      can navigate by structure rather than reading top to bottom.</li>
+    <li><b>Zoom &amp; reflow</b> — layouts reflow to 320px-wide viewports and to 200% zoom without
+      loss of content or horizontal scrolling.</li>
+    <li><b>No traps</b> — nothing auto-plays with sound, nothing steals focus, and there is no
+      content that flashes more than three times per second.</li>
+  </ul>
+
+  <h2>Known gaps</h2>
+  <ul>
+    <li>The <a href="/board/">racing board</a> and <a href="/sports/">sports board</a> are dense,
+      Bloomberg-style data terminals. Their tables update live and are not yet fully announced to
+      screen readers, and some status colours carry meaning that is not duplicated in text.</li>
+    <li>A small number of decorative glyphs and status dots do not yet have text alternatives.</li>
+    <li>Some monospace figures in the terminals fall below the 4.5:1 contrast ratio in the light
+      theme; the default dark theme meets it.</li>
+  </ul>
+  <p>These are on the list to fix. If one of them is blocking you, say so and it moves up.</p>
+
+  <h2>Assistive technology we test with</h2>
+  <p>VoiceOver on macOS and iOS with Safari, and keyboard-only navigation in Chrome and Firefox.
+  We have not yet tested with JAWS or NVDA.</p>
+
+  <h2>Non-web content</h2>
+  <p>The downloadable agent workbench app is a separate desktop application and is not covered by
+  this statement. The MCP data plane has no user interface of its own — it is consumed by your own
+  AI client, whose accessibility is determined by that client.</p>
+
+  <h2>Report a barrier</h2>
+  <p>If something on this site stops you getting to what you need, email
+  <a href="mailto:danieltomaro@icloud.com?subject=Accessibility%20—%20sportsdata-ai.com">danieltomaro@icloud.com</a>
+  with the page address and what happened. We aim to reply within 5 business days. You can also
+  open an issue on <a href="https://github.com/DanielTomaro13/sportsdata-mcp/issues">GitHub</a>.</p>
+
+  <h2>Formal approach</h2>
+  <p>This statement was self-assessed against WCAG 2.2 Level AA; it has not been audited by a
+  third party. It will be reviewed whenever the site changes materially, and at least annually.</p>
+
+  <footer>
+    <a class="wordmark" href="/">sports<span>data</span></a>
+    <div style="margin-top:8px">© 2026 · <a href="/terms.html">Terms</a> ·
+      <a href="/privacy.html">Privacy</a> · <a href="/sitemap.html">Sitemap</a> ·
+      <a href="https://ko-fi.com/danieltomaro" target="_blank" rel="noopener">Support on Ko-fi</a> ·
+      <a href="/">Home</a></div>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search — sportsdata</title>
+<meta name="description" content="Search the sportsdata site and the full catalogue of MCP tools across 29 sports data and odds providers.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#05080f">
+<link rel="canonical" href="https://sportsdata-ai.com/search.html">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+  :root{--bg:#05080f;--ink:#eef2ff;--dim:#8e97b3;--faint:#62748f;--acc1:#6e8bff;--acc2:#3dd6f5;
+    --acc3:#7cf5c8;--warn:#fbbf24;--card:rgba(255,255,255,.035);--border:rgba(255,255,255,.1);
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);min-height:100vh;
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
+  .grid-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,black 35%,transparent 75%);
+    -webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,black 35%,transparent 75%)}
+  main{flex:1;width:100%;max-width:860px;margin:0 auto;padding:28px 24px 72px}
+  nav.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:34px}
+  .wordmark{font-weight:800;font-size:19px;letter-spacing:-.3px;text-decoration:none;color:var(--ink)}
+  .wordmark span{background:linear-gradient(90deg,var(--acc1),var(--acc2));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  nav.top .home{color:var(--dim);text-decoration:none;font-size:14px}
+  nav.top .home:hover{color:var(--ink)}
+  .crumbs{font-size:13px;color:var(--faint);margin-bottom:16px}
+  .crumbs a{color:var(--dim);text-decoration:none}
+  .crumbs a:hover{color:var(--ink)}
+  h1{font-size:30px;letter-spacing:-.8px;margin-bottom:6px}
+  .lede{color:var(--dim);font-size:14.5px;margin-bottom:22px}
+  form{display:flex;gap:10px;margin-bottom:10px}
+  input[type=search]{flex:1;min-width:0;padding:13px 16px;border-radius:12px;font-size:15px;
+    border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:var(--ink);outline:none}
+  input[type=search]:focus{border-color:var(--acc2)}
+  input[type=search]::placeholder{color:var(--faint)}
+  button{padding:13px 22px;border:0;border-radius:12px;font-weight:650;font-size:15px;cursor:pointer;
+    color:#06101f;background:linear-gradient(90deg,var(--acc2),var(--acc3))}
+  .count{color:var(--faint);font-size:13px;margin:14px 0 6px}
+  h2.grp{font-size:12px;text-transform:uppercase;letter-spacing:1.4px;color:var(--faint);
+    margin:28px 0 4px;font-weight:600}
+  .res{display:block;text-decoration:none;border-top:1px solid var(--border);padding:15px 2px}
+  .res:hover{background:rgba(255,255,255,.03)}
+  .res .t{font-size:16px;color:var(--acc2);margin-bottom:2px}
+  .res .u{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-bottom:5px}
+  .res .d{font-size:13.5px;color:var(--dim);line-height:1.55}
+  .res .tag{display:inline-block;font-size:10.5px;border:1px solid var(--border);border-radius:999px;
+    padding:1px 9px;color:var(--faint);margin-left:7px;vertical-align:middle}
+  .res .tag.gambling{color:var(--warn);border-color:rgba(251,191,36,.35)}
+  .res mark{background:rgba(61,214,245,.22);color:var(--ink);border-radius:3px;padding:0 2px}
+  .toolname{font-family:var(--mono);font-size:13.5px;color:var(--acc3)}
+  .empty{border:1px solid var(--border);background:var(--card);border-radius:14px;
+    padding:28px;text-align:center;color:var(--dim);font-size:14.5px;margin-top:24px}
+  .empty a{color:var(--acc2)}
+  .more{margin-top:16px;font-size:13px;color:var(--faint)}
+  .sugg{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .sugg a{font-size:13px;color:var(--dim);text-decoration:none;border:1px solid var(--border);
+    background:var(--card);border-radius:999px;padding:6px 14px}
+  .sugg a:hover{color:var(--ink);border-color:rgba(255,255,255,.25)}
+  footer{border-top:1px solid var(--border);padding:20px 24px;text-align:center;
+    color:var(--faint);font-size:12.5px}
+  footer a{color:var(--dim);text-decoration:none}
+  :focus-visible{outline:2px solid var(--acc2);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<main>
+  <nav class="top" aria-label="Primary">
+    <a class="wordmark" href="/">sports<span>data</span></a>
+    <a class="home" href="/">← Back to sportsdata</a>
+  </nav>
+
+  <div class="crumbs"><a href="/">Home</a> › <span>Search</span></div>
+  <h1>Search</h1>
+  <p class="lede">Looks across every page on this site and the full MCP tool catalogue —
+  29 providers, ~522 tools.</p>
+
+  <form action="/search.html" method="get" role="search">
+    <label for="q" style="position:absolute;left:-9999px">Search query</label>
+    <input type="search" id="q" name="q" placeholder="e.g. afl ladder, betfair, racing odds…" autocomplete="off">
+    <button type="submit">Search</button>
+  </form>
+
+  <div class="count" id="count"></div>
+  <div id="results"></div>
+</main>
+
+<footer>
+  © 2026 sportsdata · <a href="/sitemap.html">Sitemap</a> · <a href="/terms.html">Terms</a> ·
+  <a href="/privacy.html">Privacy</a> · <a href="/accessibility.html">Accessibility</a> · <a href="https://ko-fi.com/danieltomaro" target="_blank" rel="noopener">Support on Ko-fi</a>
+</footer>
+
+<script>
+(() => {
+  const PAGES = [
+    { t: "Home — live odds & stats in your own AI tool", u: "/",
+      d: "Free, open-source MCP server giving Claude, Cursor or any AI client live sports data and cross-book odds from 29 providers.",
+      k: "home mcp server download install claude cursor odds stats free open source afl nrl nba mlb nfl nhl epl cricket golf tennis f1 ufc wnba racing horse greyhound harness sportsbet tab pinnacle unibet pointsbet ladbrokes neds betr dabble fanduel kalshi polymarket" },
+    { t: "Browse every tool", u: "/#feeds",
+      d: "Pick an MCP provider to see exactly what it gives you — every tool across 29 data providers.",
+      k: "tools catalogue providers browse api endpoints" },
+    { t: "Get it — free & open source", u: "/#get",
+      d: "Install with uvx sportsdata-mcp serve, add to Cursor, or download the prebuilt app.",
+      k: "download install setup pypi uvx cursor claude desktop app pricing free" },
+    { t: "Watch the agents work", u: "/#demo",
+      d: "A recorded preview of the agent app routing a question to a specialist, calling real data tools and answering with sources.",
+      k: "demo agents preview video playback" },
+    { t: "Pricing engines", u: "/engines.html",
+      d: "Every market the sportsdata pricing engines can price — 224 markets across 15 sports, measured from the engines themselves.",
+      k: "pricing engines markets models coverage sports matrix fair price afl nrl nba mlb sgm same game multi player props totals sampling error" },
+    { t: "Racing board terminal", u: "/board/",
+      d: "Live racing money flow — which runners are shortening, fair price per runner, and value across Sportsbet, PointsBet and Betfair.",
+      k: "racing board terminal horses greyhounds harness money flow firmers steam betfair" },
+    { t: "Sports board terminal", u: "/sports/",
+      d: "Prediction markets and the exchange as the sharp line — Kalshi, Polymarket, Betfair, Pinnacle — with bookmakers measured for value.",
+      k: "sports board terminal sharp line kalshi polymarket pinnacle sgm same game multi value" },
+    { t: "Questions, answered (FAQ)", u: "/#faq",
+      d: "What MCP is, what it costs, which sports and bookmakers are covered, and how to install it.",
+      k: "faq questions help what is mcp cost price install privacy advice afl nrl nba mlb nfl nhl epl cricket golf tennis f1 ufc racing bookmakers coverage" },
+    { t: "Terms of Service", u: "/terms.html", d: "The legal rules for using sportsdata.",
+      k: "terms conditions legal licence liability" },
+    { t: "Privacy Policy", u: "/privacy.html", d: "How sportsdata handles personal information, tracking and analytics.",
+      k: "privacy data cookies tracking analytics gdpr personal information" },
+    { t: "Accessibility Statement", u: "/accessibility.html", d: "Our commitment to WCAG 2.2 AA and how to report a barrier.",
+      k: "accessibility wcag screen reader keyboard contrast a11y" },
+    { t: "Sitemap", u: "/sitemap.html", d: "Every page on sportsdata-ai.com in one list.",
+      k: "sitemap index pages navigation" },
+    { t: "Support on Ko-fi ☕", u: "https://ko-fi.com/danieltomaro",
+      d: "Everything stays free either way — donations just help keep the feeds maintained.",
+      k: "support donate donation ko-fi kofi sponsor coffee tip contribute funding" }
+  ];
+
+  const esc = (s) => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const params = new URLSearchParams(location.search);
+  const q = (params.get("q") || "").trim();
+  const input = document.getElementById("q");
+  const countEl = document.getElementById("count");
+  const outEl = document.getElementById("results");
+  input.value = q;
+  if (!q) input.focus();
+
+  const hl = (text, needle) => {
+    const safe = esc(text);
+    if (!needle) return safe;
+    const rx = new RegExp("(" + needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "ig");
+    return safe.replace(rx, "<mark>$1</mark>");
+  };
+
+  const suggestions = () => `<div class="sugg">
+      <a href="/search.html?q=afl">afl</a><a href="/search.html?q=odds">odds</a>
+      <a href="/search.html?q=ladder">ladder</a><a href="/search.html?q=racing">racing</a>
+      <a href="/search.html?q=betfair">betfair</a><a href="/search.html?q=nba">nba</a>
+      <a href="/search.html?q=fixtures">fixtures</a></div>`;
+
+  if (!q) {
+    document.title = "Search — sportsdata";
+    countEl.textContent = "Type a query above to search the site and the tool catalogue.";
+    outEl.innerHTML = `<h2 class="grp">Popular searches</h2>${suggestions()}`;
+    return;
+  }
+
+  document.title = `${q} — search — sportsdata`;
+  const needle = q.toLowerCase();
+
+  const pageHits = PAGES
+    .map(p => {
+      const hay = (p.t + " " + p.d + " " + p.k).toLowerCase();
+      if (!hay.includes(needle)) return null;
+      let score = 0;
+      if (p.t.toLowerCase().includes(needle)) score += 10;
+      if (p.k.toLowerCase().split(/\s+/).includes(needle)) score += 6;
+      if (p.d.toLowerCase().includes(needle)) score += 2;
+      return { p, score: score || 1 };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.score - a.score)
+    .map(x => x.p);
+
+  // external entries carry a full URL; internal ones are site-relative and get the domain prefixed
+  const isExternal = (u) => /^https?:\/\//.test(u);
+  const label = (u) => isExternal(u) ? u.replace(/^https?:\/\//, "") : "sportsdata-ai.com" + u;
+
+  const renderPages = () => pageHits.length
+    ? `<h2 class="grp">Pages</h2>` + pageHits.map(p =>
+        `<a class="res" href="${esc(p.u)}"${isExternal(p.u) ? ' target="_blank" rel="noopener"' : ""}>
+           <div class="t">${hl(p.t, q)}</div>
+           <div class="u">${esc(label(p.u))}</div>
+           <div class="d">${hl(p.d, q)}</div>
+         </a>`).join("")
+    : "";
+
+  outEl.innerHTML = renderPages() + `<div id="tools-slot"></div>`;
+  countEl.textContent = `Searching the tool catalogue for “${q}”…`;
+
+  fetch("/catalogue.json", { cache: "force-cache" })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(cat => {
+      const LIMIT = 60;
+      const hits = [];
+      for (const prov of cat.providers || []) {
+        const provMatch = prov.name.toLowerCase().includes(needle) || prov.id.toLowerCase().includes(needle);
+        for (const t of prov.tools || []) {
+          const nameHit = t.name.toLowerCase().includes(needle);
+          const descHit = (t.desc || "").toLowerCase().includes(needle);
+          if (!nameHit && !descHit && !provMatch) continue;
+          hits.push({ prov, t, score: nameHit ? 10 : descHit ? 4 : 1 });
+        }
+      }
+      hits.sort((a, b) => b.score - a.score);
+
+      const total = pageHits.length + hits.length;
+      countEl.textContent = total
+        ? `${total} result${total === 1 ? "" : "s"} for “${q}”`
+        : `No results for “${q}”`;
+
+      const slot = document.getElementById("tools-slot");
+      if (!hits.length) {
+        slot.innerHTML = pageHits.length ? "" : `<div class="empty">
+            Nothing matched <b>${esc(q)}</b>.<br><br>
+            Try a sport (<a href="/search.html?q=afl">afl</a>), a bookmaker
+            (<a href="/search.html?q=betfair">betfair</a>), or browse
+            <a href="/#feeds">every tool by provider</a>.
+          </div>${suggestions()}`;
+        return;
+      }
+
+      const shown = hits.slice(0, LIMIT);
+      slot.innerHTML = `<h2 class="grp">Tools (${hits.length})</h2>` + shown.map(({ prov, t }) =>
+        `<a class="res" href="/#feeds">
+           <div class="t"><span class="toolname">${hl(t.name, q)}</span>
+             <span class="tag ${esc(prov.kind)}">${esc(prov.name)}</span></div>
+           <div class="d">${hl(t.desc || "No description.", q)}</div>
+         </a>`).join("") +
+        (hits.length > LIMIT
+          ? `<div class="more">Showing the first ${LIMIT} of ${hits.length} matching tools —
+             <a href="/#feeds" style="color:var(--acc2)">browse them all by provider</a>.</div>`
+          : "");
+    })
+    .catch(() => {
+      const total = pageHits.length;
+      countEl.textContent = total ? `${total} result${total === 1 ? "" : "s"} for “${q}”` : `No results for “${q}”`;
+      const slot = document.getElementById("tools-slot");
+      slot.innerHTML = `<div class="empty">The tool catalogue couldn't be loaded right now.
+        You can still <a href="/#feeds">browse every tool by provider</a>.</div>`;
+    });
+})();
+</script>
+</body>
+</html>
