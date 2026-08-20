@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Racing Board — Live Money Flow &amp; Value Terminal | sportsdata</title>
-  <meta name="description" content="Live racing terminal: which runners are shortening as money comes in, a fair price per runner, and value measured across Sportsbet, PointsBet and Betfair. Free, no signup." />
+  <meta name="description" content="Live racing money-flow terminal: which runners are firming as money arrives, a fair price for every runner, and value across Sportsbet, PointsBet and Betfair." />
   <link rel="canonical" href="https://sportsdata-ai.com/board/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#0a0a0c" />
@@ -30,11 +30,39 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Racing Board Terminal",
+    "url": "https://sportsdata-ai.com/board/",
+    "description": "A live money-flow terminal for Australian racing: tote pool share and price movement per runner, a de-vigged fair price, cross-book value against Sportsbet, PointsBet and Betfair, and a price generator for exotics and same-race multis.",
+    "applicationCategory": "SportsApplication",
+    "operatingSystem": "Any (web browser)",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "AUD"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "sportsdata",
+      "url": "https://sportsdata-ai.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "sportsdata",
+      "url": "https://sportsdata-ai.com/"
+    }
+  }
+  </script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="topbar">
-    <div class="brand"><span class="logo">▟</span> RACING<span class="accent">BOARD</span><span class="term">TERMINAL</span></div>
+    <h1 class="brand"><span class="logo">▟</span> RACING<span class="accent">BOARD</span><span class="term">TERMINAL</span></h1>
     <nav class="sitelinks" aria-label="Site">
       <a href="/" class="back" title="Back to sportsdata-ai.com">← SPORTSDATA</a>
       <a href="/agents.html" class="opt">AGENTS</a>
@@ -90,6 +118,56 @@
       </section>
     </div>
   </main>
+
+
+  <section class="about">
+    <h2>What the racing board shows</h2>
+    <p class="lead">A live money-flow terminal for Australian thoroughbred, harness and greyhound
+    racing. It watches where money is actually going — tote pool share and bookmaker price moves —
+    prices every runner itself, and marks the runners the market has not caught up with yet.</p>
+    <p>Everything on the board is derived from real market data pulled through the
+    <a href="/">sportsdata</a> data plane: Sportsbet and PointsBet for bookmaker prices, Betfair for
+    exchange money, and tote pool figures for where the cash is landing. Nothing here is a tip
+    service — the board shows you the market's own behaviour and its own inconsistencies.</p>
+
+    <h2>How to read it</h2>
+    <h3>Money in</h3>
+    <p><b>Money in</b> means a runner's share of the tote pool is rising while its price shortens.
+    That is the clearest public signal that money is arriving for a horse, and it is what the
+    scrolling tape at the top of the board tracks. A runner marked with multiple ticks has firmed
+    across more than one market, which filters out the noise of a single book adjusting.</p>
+    <h3>Fair price</h3>
+    <p>The <b>fair</b> column is the board's own price for each runner, built by removing the
+    bookmaker's margin (the overround) from the market and re-normalising. Comparing fair against
+    the <b>best</b> available price across the books is how the board finds value: when the best
+    price on offer is longer than the fair price, that runner is an overlay.</p>
+    <h3>Value and overlays</h3>
+    <p>The <b>value</b> panel lists those overlays, ranked by the size of the edge. An overlay is
+    not a prediction that a runner will win — it is a statement that one book is offering a longer
+    price than the rest of the market implies, which is a very different and much more measurable
+    claim.</p>
+    <h3>Scorecard</h3>
+    <p>The <b>scorecard</b> keeps the board honest. It replays every pick the board has made
+    against the actual results and reports strike rate, return on investment and profit or loss at
+    flat stakes. If the method is not working, the scorecard is where you will see it first.</p>
+
+    <h2>Generating a price</h2>
+    <p>The price generator at the foot of the race panel prices exotics and same-race multis off the
+    board's own fair prices rather than off the bookmaker's, so you can see what a combination
+    should cost before you compare it to what is being offered.</p>
+
+    <h2>Running it live</h2>
+    <p>The public board animates a captured sequence of real market data so the page works for
+    everyone without a backend. Run it against your own machine and it polls the live feeds instead —
+    the <a href="https://github.com/DanielTomaro13/RacingBoard#run-it-live" rel="noopener">source is
+    on GitHub</a>, and the underlying feeds are the same free MCP tools the rest of the site is built
+    on. See also the <a href="/sports/">sports board</a>, which applies the same idea to team sports,
+    and the <a href="/agents.html">agent roster</a> if you would rather ask questions than read a
+    terminal.</p>
+
+    <p><b>Informational only.</b> Nothing on this page is betting advice, and it is for adults 18
+    and over. Some bookmaker feeds are geo-restricted outside their home region.</p>
+  </section>
 
   <footer>RACINGBOARD TERMINAL · money-in = tote pool share rising / price shortening ·
     informational only, not betting advice · 18+ ·

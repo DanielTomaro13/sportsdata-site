@@ -55,7 +55,7 @@ body {
   background: linear-gradient(180deg, #0d0d11, var(--bg));
   border-bottom: 1px solid var(--line2); position: sticky; top: 0; z-index: 40;
 }
-.brand { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 15px; letter-spacing: .5px; }
+.brand { margin: 0; display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 15px; letter-spacing: .5px; }
 .brand .logo { color: var(--amber); font-size: 16px; }
 .brand .accent { color: var(--amber); }
 .brand .term { font-size: 9px; letter-spacing: 2px; color: var(--muted); border: 1px solid var(--line2); padding: 1px 5px; border-radius: 3px; margin-left: 4px; }
@@ -334,3 +334,20 @@ footer a { color: var(--muted); }
 }
 .sitelinks a.back:hover { border-color: var(--ink2); background: var(--panel); }
 @media (max-width: 760px) { .sitelinks a.opt { display: none; } }
+
+/* Static, crawlable explainer under the terminal. The board itself is rendered by JS,
+   so to a crawler the page was a ~600-character shell with no <h1> — which is why it
+   sat in "crawled, currently not indexed". This is the page's real prose content, and
+   it doubles as the legend for anyone reading the board for the first time. */
+.about { max-width: 860px; margin: 28px auto 0; padding: 0 18px; }
+.about h2 { font-size: 15px; letter-spacing: .5px; margin: 26px 0 8px; color: var(--ink); }
+.about h2:first-child { margin-top: 0; }
+.about h3 { font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--muted); margin: 18px 0 6px; }
+.about p, .about li { font-size: 13px; line-height: 1.7; color: var(--ink2); }
+.about p { margin: 0 0 10px; }
+.about ul { margin: 0 0 10px; padding-left: 18px; }
+.about li { margin-bottom: 5px; }
+.about b { color: var(--ink); font-weight: 700; }
+.about a { color: var(--amber); }
+.about .lead { font-size: 14px; color: var(--ink); }

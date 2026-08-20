@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sports Board — Sharp Line &amp; Value Terminal | sportsdata</title>
-<meta name="description" content="Team-sports terminal: Kalshi, Polymarket, Betfair and Pinnacle as the sharp line, bookmakers measured against it for value, plus a same-game-multi price generator. Free, no signup." />
+<meta name="description" content="Team-sports value terminal: Kalshi, Polymarket, Betfair and Pinnacle as the sharp line, every bookmaker measured against it, plus a same-game-multi pricer." />
 <link rel="canonical" href="https://sportsdata-ai.com/sports/" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="theme-color" content="#0a0a0c" />
@@ -30,11 +30,39 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Sports Board Terminal",
+  "url": "https://sportsdata-ai.com/sports/",
+  "description": "A live value terminal for team sports: Kalshi, Polymarket, Betfair and Pinnacle blended and de-vigged into a sharp line, every bookmaker measured against it, and a correlated same-game-multi pricer.",
+  "applicationCategory": "SportsApplication",
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "AUD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "sportsdata",
+    "url": "https://sportsdata-ai.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "sportsdata",
+    "url": "https://sportsdata-ai.com/"
+  }
+}
+</script>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="topbar">
-    <div class="brand"><span class="logo">◪</span> SPORTS<span class="accent">BOARD</span><span class="term">TERMINAL</span></div>
+    <h1 class="brand"><span class="logo">◪</span> SPORTS<span class="accent">BOARD</span><span class="term">TERMINAL</span></h1>
     <nav class="sitelinks" aria-label="Site">
       <a href="/" class="back" title="Back to sportsdata-ai.com">← SPORTSDATA</a>
       <a href="/agents.html" class="opt">AGENTS</a>
@@ -67,6 +95,50 @@
       <section id="detail" class="panel detail"><div class="empty"><div class="big">◪</div>SELECT A GAME</div></section>
     </div>
   </main>
+
+  <section class="about">
+    <h2>What the sports board shows</h2>
+    <p class="lead">A live value terminal for team sports. It treats the prediction markets and the
+    betting exchange as the sharp line — the closest thing to a true probability the public market
+    offers — then measures every bookmaker against it and shows you where the books disagree.</p>
+    <p>The board covers the major codes carried by the <a href="/">sportsdata</a> data plane: AFL,
+    NRL, NBA, MLB, NFL, NHL and the European football leagues, alongside the markets quoted for
+    them. Prices come from Kalshi, Polymarket, Betfair and Pinnacle on the sharp side, and the
+    retail books on the other.</p>
+
+    <h2>How to read it</h2>
+    <h3>The sharp line</h3>
+    <p>The <b>sharp</b> price is a de-vigged blend of whichever of Kalshi, Polymarket, Betfair and
+    Pinnacle have priced that game. Those four are grouped together for a reason: two are prediction
+    markets where traders take a position with their own money, one is an exchange where punters bet
+    against each other, and Pinnacle is the low-margin book that welcomes winning players. All four
+    are disciplined by money in a way a retail promotional price is not.</p>
+    <p>De-vigging matters. A bookmaker's quoted odds include their margin, so the implied
+    probabilities across a market always sum to more than 100%. Stripping that margin out and
+    re-normalising is what turns a price into a probability you can actually compare.</p>
+    <h3>Value</h3>
+    <p><b>Value</b> is the gap between the best price any book is offering and the sharp line's own
+    fair price for the same outcome. A positive edge means one book is longer than the sharp market
+    implies. It is a statement about disagreement between markets, not a prediction about the game.</p>
+    <h3>Same-game multis</h3>
+    <p>The <b>SGM</b> generator prices a same-game multi as a correlated combination rather than by
+    naively multiplying the legs together. Legs within one game are not independent — a team winning
+    big makes its own players' overs more likely — and pricing that correlation properly is the
+    difference between a real number and a guess. The engine prices the combination, so you can
+    compare it against the bookmaker's offer.</p>
+
+    <h2>Running it live</h2>
+    <p>The public board animates a captured sequence of real market data so it works for everyone
+    without a backend; the sharp line, the industry ladders and the SGM generator all function.
+    Point it at your own warehouse-backed instance and it polls live feeds instead. See also the
+    <a href="/board/">racing board</a> for the same approach applied to money flow in racing, and
+    the <a href="/agents.html">agent roster</a> if you would rather ask a question than read a
+    terminal.</p>
+
+    <p><b>Informational only.</b> Nothing on this page is betting advice, and it is for adults 18
+    and over. Some bookmaker feeds are geo-restricted outside their home region.</p>
+  </section>
+
   <footer>SPORTSBOARD · sharp = de-vigged blend of whichever of Kalshi·Polymarket·Betfair·Pinnacle priced the game · VALUE = best book vs sharp · SGM = engine correlated price ·
     informational only, not betting advice · 18+ ·
     <a href="/">SPORTSDATA</a> · <a href="/board/">RACING BOARD</a> ·
